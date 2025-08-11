@@ -1,9 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Home: React.FC = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
       <div className='h-screen flex justify-center items-center flex-col'>
         <div className="text-center space-y-4 max-w-4xl mx-auto px-4">
           <h1 className='text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent hover:from-blue-200 hover:via-white hover:to-blue-200 transition-all duration-300 cursor-pointer mb-3'>
@@ -13,14 +17,17 @@ const Home: React.FC = () => {
             Pioneering the Future of Robotics and Innovation
           </p>
           <div className="flex flex-col md:flex-row gap-3 justify-center mt-6">
-            <button className="px-6 py-2.5 bg-gradient-to-r from-white/20 to-white/10 text-white rounded-xl border border-white/30 shadow-lg shadow-white/20 hover:shadow-white/40 hover:scale-105 transition-all duration-300 backdrop-blur-sm">
+            <Link 
+              to="/projects" 
+              onClick={scrollToTop}
+              className="px-6 py-2.5 bg-gradient-to-r from-white/20 to-white/10 text-white rounded-xl border border-white/30 shadow-lg shadow-white/20 hover:shadow-white/40 hover:scale-105 transition-all duration-300 backdrop-blur-sm inline-block text-center"
+            >
               Explore Projects
-            </button>
+            </Link>
           </div>
         </div>
       </div>
 
-      {/* Mission & Vision Section */}
       <div className='py-16 px-4 bg-gradient-to-br from-black/90 to-black/70 m-4 rounded-2xl shadow-2xl shadow-white/20 backdrop-blur-md border border-white/10'>
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
@@ -28,7 +35,6 @@ const Home: React.FC = () => {
           </h2>
           
           <div className='grid md:grid-cols-2 gap-6 mb-16'>
-            {/* Mission Card */}
             <div className='bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-2xl shadow-white/10 hover:shadow-white/20 transition-all duration-300 hover:scale-105'>
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 bg-gradient-to-br from-white/20 to-white/10 rounded-lg flex items-center justify-center mr-3 shadow-lg shadow-white/15">
@@ -44,7 +50,6 @@ const Home: React.FC = () => {
               </p>
             </div>
 
-            {/* Vision Card */}
             <div className='bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-2xl shadow-white/10 hover:shadow-white/20 transition-all duration-300 hover:scale-105'>
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 bg-gradient-to-br from-white/20 to-white/10 rounded-lg flex items-center justify-center mr-3 shadow-lg shadow-white/15">
@@ -61,10 +66,8 @@ const Home: React.FC = () => {
             </div>
           </div>
 
-          {/* Team Section */}
           <div>
             <div className='flex flex-wrap justify-center gap-6'>
-              {/* Faculty Coordinator */}
               <div className='group relative'>
                 <div className='bg-transparent shadow-2xl shadow-white/10 hover:shadow-white/20 transition-all duration-300 hover:scale-105 overflow-hidden'>
                   <div className="w-56 h-72 bg-black overflow-hidden">
@@ -81,7 +84,6 @@ const Home: React.FC = () => {
                 </div>
               </div>
 
-              {/* Co-Founder 1 */}
               <div className='group relative'>
                 <div className='bg-transparent shadow-2xl shadow-white/10 hover:shadow-white/20 transition-all duration-300 hover:scale-105 overflow-hidden'>
                   <div className="w-56 h-72 bg-black overflow-hidden">
@@ -98,7 +100,6 @@ const Home: React.FC = () => {
                 </div>
               </div>
 
-              {/* Co-Founder 2 */}
               <div className='group relative'>
                 <div className='bg-transparent shadow-2xl shadow-white/10 hover:shadow-white/20 transition-all duration-300 hover:scale-105 overflow-hidden'>
                   <div className="w-56 h-72 bg-black overflow-hidden">
@@ -120,7 +121,6 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* Stats Section */}
       <div className="py-12 flex flex-row justify-center items-center">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
