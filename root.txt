@@ -1,0 +1,11 @@
+<p
+        style={{
+          maxWidth: "600px",
+          color: "#ccc",
+          fontSize: "1.1rem",
+          marginBottom: "2rem",
+        }}
+      >
+        Production Ready Frontend Pages in minutes using your designs or
+        screenshots.
+      </p>
