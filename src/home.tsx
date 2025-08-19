@@ -120,7 +120,7 @@ const Home: React.FC = () => {
     <div className="min-h-screen">
       <div ref={wrapperRef} className="relative">
         <div ref={heroRef} className='h-screen flex justify-center items-center flex-col fixed inset-0'>
-          <div className="text-center space-y-4 max-w-4xl mx-auto px-4">
+          <div className="text-center space-y-4 max-w-4xl md:mx-auto ml-16 px-4">
             <h1 className='text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent hover:from-blue-200 hover:via-white hover:to-blue-200 transition-all duration-300 cursor-pointer mb-3'>
               Welcome to RoboSoc
             </h1>
