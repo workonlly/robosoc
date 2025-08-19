@@ -167,109 +167,110 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ item }) => {
 const projects = [
   {
     title: "SWARM ROBOTICS",
-    description: "Swarm robotics is an approach to the coordination of multiple robots as a system which consist of large numbers of mostly simple physical robots. It is supposed that a desired collective behavior emerges from the interactions between the robots and interactions of robots with the environment",
+    description: "Swarm robotics is an approach to the coordination of multiple robots as a system which consist of large numbers of mostly simple physical robots. It is supposed that a desired collective behavior emerges from the interactions between the robots and interactions of robots with the environment.",
     image: "path/to/image.jpg",
   },
   {
-    title: "HUMANOID ROBOT",
+    title: "HUMANIOD ROBOT",
     description: "Humanoid robot is a robot that operates like a human body. These robots must be capable of dealing with a wide range of tasks and objects encountered in dynamic unstructured environments. They require a lightweight body, high flexibility, a variety of sensors, and artificial intelligence.",
     image: "path/to/another-image.jpg",
   },
   {
-    title: "S.L.A.M",
-    description: "Simultaneous Localization and Mapping constructs maps of unknown environments while tracking location. Used for path planning and obstacle avoidance.",
+    title: "S.L.A.M (SIMULTANEOUS LOCALIZATION AND MAPPING)",
+    description: "It is the computational problem of constructing or updating a map of an unknown environment while simultaneously keeping track of an agent's location within it. Map data can be used to perform tasks such as path planning and obstacle avoidance.",
     image: "path/to/another-image.jpg",
   },
   {
     title: "DRIVER-LESS CAR",
-    description: "Self-driving vehicle that senses environment and moves autonomously. Combines RADAR, computer vision, LIDAR, SONAR, and inertial measurement units.",
+    description: "A self-driving vehicle that is capable of sensing it's environment and moving with little or no human input. Autonomous cars combine a variety of sensors to perceive their surrounding such as RADAR, computer vision, LADAR, SONAR, odometry and inertial measurement units.",
     image: "path/to/another-image.jpg",
   },
   {
-    title: "RUBIK CUBE SOLVER",
-    description: "Automated cube solver using computer vision for color detection and Kociemba algorithm. Arduino controls mechanical movements to solve the cube.",
+    title: "RUBIC CUBE SOLVER",
+    description: "Cube images are captured by a python program module, then color extraction for each sticker is processed by other program module and finally the cube is solved by Kociemba algorithm, the solution is sent to Arduino trough a serial port. Once the solution is received the Arduino code start to be processing the movements, after 6-8 minutes the process finish and the robot show all the faces of the cube solved.",
     image: "path/to/another-image.jpg",
   },
   {
     title: "3-D PRINTER",
-    description: "Additive manufacturing creates solid objects from digital files by laying successive material layers. Enables complex shapes with minimal material waste.",
+    description: "The process of creating three-dimensional solid objects from a digital file is known as 3D printing or additive manufacturing and a device that helps to achieve this is a 3D printer. An object is created in an additive process by laying down successive layers of material until the object is complete. Each of these layers is a thinly sliced cross-section of the object. It allows you to create complex shapes while using less material than traditional manufacturing methods.",
     image: "path/to/another-image.jpg",
   },
   {
     title: "TETRIS",
-    description: "Tile-matching puzzle game with falling tetrominoes. Goal is destroying block lines before reaching the top using various 4-block shapes.",
+    description: "A Tetris is a tile-matching puzzle game. The game has a simple goal of destroying lines of block before it reaches the top. The line is made up of a square block. Tetrominoes is the shape of the 4 connected blocks that falls vertically down.",
     image: "path/to/another-image.jpg",
   },
   {
     title: "HOME AUTOMATION",
-    description: "Smart home systems monitor and control lighting, climate, entertainment, and security. Connected to IoT for remote access and automation.",
+    description: "Home automation or domestics is building automation for a home, called a smart home or smart house. A home automation system will monitor and/or control home attributes such as lighting, climate, entertainment systems, and appliances. It may also include home security such as access control and alarm systems. When connected with the Internet, home devices are an important constituent of IoT.",
     image: "path/to/another-image.jpg",
   },
   {
     title: "ROBO RACE",
-    description: "Autonomous vehicle software development for dynamic driving limits. Focus on real-time capability, performance, and algorithm reliability.",
+    description: "The goal of the project Rob race is the development of a software, which can move an autonomous vehicle in the driving dynamic limit area on the track. Subprojects, each of which contributes to the overall software architecture of the vehicle. The focus of the final real integration and testing in the Robocar is on the evaluation of the real-time capability, performance and reliability of the algorithms.",
     image: "path/to/another-image.jpg",
   },
   {
     title: "CNC MACHINE",
-    description: "Computer-controlled machine tools with microcomputer controllers. Programmable through keyboard input for precise manufacturing operations.",
+    description: "The CNC machine is made up of a mini-computer or a microcomputer that serves as the machine's controller unit. The programme of instructions in CNC machines is fed directly into the computer via a small board similar to a traditional keyboard. CNC machines are referred to as 'soft-wired' NC because of their capacity and flexibility.",
     image: "path/to/another-image.jpg",
   },
   {
     title: "LINE FOLLOWER ROBOT",
-    description: "Automated guided vehicle following visual lines using IR sensors. Detects surface differences through reflection and resistance changes.",
+    description: "A line follower is an automated guided vehicle, which follow a visual line(black line on a white surface or other way) embedded on the floor or ceiling. When IR transmitter is on the black surface IR rays were absorbed by the surface and when it is on white surface these IR rays were reflected. The IR receiver has maximum resistance when no IR rays are received and voltage from VCC flows through the resistor. As the intensity IR rays received by the receiver increases, resistance value decreases and reverse break down occurs.",
     image: "path/to/another-image.jpg",
   },
   {
     title: "MULTI TERRAIN BOT",
-    description: "Mobile robot with excellent off-road performance. Autonomously navigates rough terrains using environmental sensors and decision algorithms.",
+    description: "A mobile robot that are capable of showcasing excellent off-road performances. They are able to navigate across bumpy and rough terrains. It is autonomous, will sense its environment with the help of sensors and then will take further decision on its own, with the help of instructions.",
     image: "path/to/another-image.jpg",
   },
   {
     title: "QUADRUPED BOT",
-    description: "Four-legged robot mimicking animal gaits. Adapts to obstacles by adjusting height and navigating extremely rough surfaces.",
+    description: "Quadruped robots can mimic animal walking gait and they have certain advantages like walking on terrain and extremely rough surfaces. Obstacles can impede the movement of wheeled vehicles, where a quadruped can adapt to avoid obstacles by adjusting its height.",
     image: "path/to/another-image.jpg",
   },
   {
     title: "VISION BASED ROBOT",
-    description: "Camera-equipped robot reading surroundings and responding accordingly. Programmed to locate and chase colored objects or track symbols.",
+    description: "By vision robot, we aimed to develop a robot which could read the surrounding by using a camera and respond accordingly. Our robot was programmed to locate and chase a yellow ball which can next be extended to track and follow signs or symbols as required.",
     image: "path/to/another-image.jpg",
   },
   {
-    title: "BCI INTERFACE",
-    description: "Brain Computer Interface wheelchair using motor imagery. Cost-effective solution helping patients navigate through thought control.",
+    title: "BCI (BRAIN COMPUTER INTERFACE)",
+    description: "We propose an innovative, futuristic and cost-effective Brain Computer Interface (BCI) based wheelchair. The wheelchair helps the patient to navigate from one place to another based on motor imagery model to control a brain actuated wheelchair. The wheelchair.",
     image: "path/to/another-image.jpg",
   },
   {
     title: "SELF BALANCING BOT",
-    description: "Two-wheeled inverted pendulum robot. Maintains vertical position through acceleration control based on inclination measurements.",
+    description: "Self-balancing robot is based on the principle of inverted pendulum, which is a two-wheeled vehicle which balances itself up in the vertical position with reference to the ground. It will be prevented from falling by giving acceleration according to its inclination from the vertical.",
     image: "path/to/another-image.jpg",
   },
   {
     title: "ROBOTIC ARM",
-    description: "Industrial robotic arm for welding, material handling, and manufacturing. Controlled using leap motion and Arduino with servo motors.",
+    description: "The robotic arm is used for multiple industrial applications, from welding, material handling, and thermal spraying, to painting and drilling. We aim to build the robotic hand which will be controlled using leap motion and Arduino. The robotic arm will have four fingers and a thumb built to approximate dimensions of the human hand all using a 3-D printer.",
     image: "path/to/another-image.jpg",
   },
   {
     title: "ROBOTIC HAND",
-    description: "3D-printed robotic hand with four fingers and thumb. Leap Motion controlled with precise finger movement and object manipulation.",
+    description: "To make a fully functional robotic hand that have enough strength to pick objects. The hand is controlled by Leap Motion + Arduino UNO + Servo Motors and the hand itself will be made by 3-D printing. It will recognize each finger and it can move separately with good precision and sensibility depending on the person who is using it.",
     image: "path/to/another-image.jpg",
   },
   {
-    title: "ROBOCON 2018",
-    description: "Shuttle shooting robot with catapult mechanism. Autonomous positioning using ground sensors for precise ring targeting.",
+    title: "ROBOCON 2018 - Shoot and Pass Shuttles",
+    description: "The challenge of ROBOCON 2018 was to shoot and pass the shuttles (ball fixed on a thread) through given rings which were fixed at a distance on poles. Automatic robot with precise locomotion in which a sensor scans the ground for exact positioning. The autonomous robot used a catapult like mechanism to shoot the shuttles through the rings.",
     image: "path/to/another-image.jpg",
   },
   {
-    title: "FRISBEE THROWER",
-    description: "ROBOCON 2017 Frisbee shooting bot with fast-rotating disc mechanism. Features omnidirectional movement without steering wheels.",
+    title: "FRISBEE THROWER (ROBOCON 2017 BOT)",
+    description: "In ROBOCON 2017, the challenge was to build a Frisbee shooting bot that could land Frisbees on given platforms. For this, we made a manually controlled robot that shoots Frisbee with the help of a fast-rotating disc. A notable thing is its locomotion because it can move in the left and right directions without steering wheel.",
     image: "path/to/another-image.jpg",
   },
   {
-    title: "ECO & HYBRID ROBOT",
-    description: "ROBOCON 2016 clean energy theme robots. ECO robot without actuators receives wireless energy from hybrid robot partner.",
+    title: "ECO ROBOT & HYBRID ROBOT (ROBOCON 2016 BOT )",
+    description: "Robocon (Robotics Contest) is organized by Asia Pacific Broadcasting Union (ABU) every year and is one of the biggest Robotics competitions in Asia. The theme for the year 2016 was 'Clean Energy Recharging the World'. Two robots, Hybrid and ECO Robot were required for this. ECO Robot didn't have any actuator to drive itself hybrid robot was supposed to give it to energy without any physical contact.",
     image: "path/to/another-image.jpg",
   },
+  
 ];
 
 const Projects: React.FC = () => {
