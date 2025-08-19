@@ -97,11 +97,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ item }) => {
         '--mouse-x': '50%',
         '--mouse-y': '50%',
         border: isHovered 
-          ? '2px md:4px solid transparent'
-          : '2px md:4px solid rgba(255, 255, 255, 0.2)',
+          ? '3px solid transparent'
+          : '3px solid rgba(255, 255, 255, 0.1)',
         backgroundImage: isHovered 
-          ? `linear-gradient(rgb(0,0,0), rgb(0,0,0)), radial-gradient(80px md:120px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6) 25%, rgba(255, 255, 255, 0.3) 50%, rgba(209,213,219,0.2) 80%)`
-          : 'none',
+          ? `linear-gradient(rgb(0,0,0), rgb(0,0,0)), radial-gradient(150px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8) 20%, rgba(255, 255, 255, 0.4) 40%, rgba(255, 255, 255, 0.1) 60%, transparent 80%)`
+          : 'linear-gradient(rgb(0,0,0), rgb(0,0,0)), linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))',
         backgroundOrigin: 'border-box',
         backgroundClip: 'padding-box, border-box',
         transform: isHovered ? 'translateY(-1px) md:translateY(-2px)' : 'translateY(0)',
