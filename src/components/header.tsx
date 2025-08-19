@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useLenis } from '../hooks/useLenis'
 
 const Header: React.FC = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const { scrollToTop } = useLenis();
 
   return (<>
     <header className="w-full hidden md:block sticky top-3 z-50">

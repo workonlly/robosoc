@@ -1,4 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 // Mouse-following glow wrapper component
 const GlowCardWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -270,10 +275,58 @@ const projects = [
 
 
 const Projects: React.FC = () => {
+  const titleRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const title = titleRef.current;
+    const cards = cardsRef.current;
+
+    if (!title || !cards) return;
+
+    // Set initial states
+    gsap.set(title, { opacity: 0, y: 50 });
+    gsap.set(cards.children, { opacity: 0, y: 100 });
+
+    // Title animation
+    gsap.to(title, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: title,
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Cards stagger animation
+    gsap.to(cards.children, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: cards,
+        start: "top 75%",
+        end: "bottom 25%",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Cleanup function
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
   return (
     <div className="projects min-h-screen ">
       {/* Header Section */}
-      <div className="max-w-6xl mx-auto mb-8 sm:mb-12 lg:mb-16 m-5">
+      <div ref={titleRef} className="max-w-6xl mx-auto mb-8 sm:mb-12 lg:mb-16 m-5">
         <div className='flex items-center w-full gap-2 sm:gap-4 mb-8 sm:mb-10 lg:mb-12 '>
           <div className='bg-white h-8 sm:h-12 lg:h-16 flex-1 rounded-sm shadow-lg'></div>
           <h1 className='text-2xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-bold text-white tracking-wider text-center px-2 sm:px-4 lg:px-8'>
@@ -286,7 +339,7 @@ const Projects: React.FC = () => {
       
       {/* Projects Grid */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pb-16">
-        <div className="flex flex-col gap-8 md:gap-12 lg:gap-16">
+        <div ref={cardsRef} className="flex flex-col gap-8 md:gap-12 lg:gap-16">
           {projects.map((item) => (
             <GlowCardWrapper key={item.title}>
               <ProjectCard item={item} />

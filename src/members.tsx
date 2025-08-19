@@ -1,7 +1,12 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { databases, DB_ID  } from '../appwrite';
 import type { Models } from 'appwrite';
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 interface Member extends Models.Document {
   name: string;
@@ -19,9 +24,11 @@ const Members: React.FC = () => {
   const [members2, setMembers2] = useState<Member[]>([]);
   const [members1, setMembers1] = useState<Member[]>([]);
   
+  const titleRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+  
   // Combine all members into a single array
   const allMembers = [...members4, ...members3, ...members2, ...members1];
-  
 
   useEffect(() => {
     const fetchMembers = async () => {
@@ -53,9 +60,71 @@ const Members: React.FC = () => {
     fetchMembers();
   }, []);
 
+  // Scroll animations
+  useEffect(() => {
+    const title = titleRef.current;
+    const cards = cardsRef.current;
+
+    if (!title || !cards) return;
+
+    // Set initial states
+    gsap.set(title, { opacity: 0, y: 50 });
+    gsap.set(cards.children, { opacity: 0, y: 50, scale: 0.9 });
+
+    // Title animation
+    gsap.to(title, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: title,
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Cards stagger animation with delay for loading
+    const animateCards = () => {
+      if (cards.children.length > 0) {
+        gsap.to(cards.children, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: cards,
+            start: "top 75%",
+            end: "bottom 25%",
+            toggleActions: "play none none reverse"
+          }
+        });
+      }
+    };
+
+    // Delay animation until members are loaded
+    const checkAndAnimate = () => {
+      if (allMembers.length > 0) {
+        setTimeout(animateCards, 100);
+      } else {
+        setTimeout(checkAndAnimate, 100);
+      }
+    };
+
+    checkAndAnimate();
+
+    // Cleanup function
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, [allMembers]);
+
   return (
-    <div className="min-h-screen py-10 px-4">
-       <div className="max-w-6xl mx-auto mb-8 sm:mb-12 lg:mb-16">
+    <div className="min-h-screen py-10 px-4 ">
+       <div ref={titleRef} className="max-w-6xl mx-auto mb-8 sm:mb-12 lg:mb-16">
         <div className='flex items-center w-full gap-2 sm:gap-4 mb-8 sm:mb-10 lg:mb-12'>
           <div className='bg-white h-8 sm:h-12 lg:h-16 flex-1 rounded-sm shadow-lg'></div>
           <h1 className='text-2xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-bold text-white tracking-wider text-center px-2 sm:px-4 lg:px-8'>
@@ -67,7 +136,7 @@ const Members: React.FC = () => {
       </div>
 
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-wrap justify-center gap-6">
+        <div ref={cardsRef} className="flex flex-wrap justify-center gap-6">
           {allMembers.length === 0 ? (
             <div className="w-full text-center">
               <p className="text-white text-center">Loading members...</p>

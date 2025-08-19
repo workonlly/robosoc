@@ -1,6 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger)
 
 const ContactUs: React.FC = () => {
+  const titleRef = useRef<HTMLDivElement>(null);
+  const contactInfoRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLDivElement>(null);
+  const socialRef = useRef<HTMLDivElement>(null);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -36,10 +46,92 @@ const ContactUs: React.FC = () => {
     alert('Message sent successfully!')
   }
 
+  useEffect(() => {
+    const title = titleRef.current;
+    const contactInfo = contactInfoRef.current;
+    const form = formRef.current;
+    const social = socialRef.current;
+
+    if (!title) return;
+
+    // Set initial states
+    gsap.set(title, { opacity: 0, y: 50 });
+    if (contactInfo) gsap.set(contactInfo, { opacity: 0, x: -50 });
+    if (form) gsap.set(form, { opacity: 0, x: 50 });
+    if (social) gsap.set(social, { opacity: 0, y: 30 });
+
+    // Title animation
+    gsap.to(title, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: title,
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Contact info animation
+    if (contactInfo) {
+      gsap.to(contactInfo, {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: contactInfo,
+          start: "top 75%",
+          end: "bottom 25%",
+          toggleActions: "play none none reverse"
+        }
+      });
+    }
+
+    // Form animation
+    if (form) {
+      gsap.to(form, {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: form,
+          start: "top 75%",
+          end: "bottom 25%",
+          toggleActions: "play none none reverse"
+        }
+      });
+    }
+
+    // Social section animation
+    if (social) {
+      gsap.to(social, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: social,
+          start: "top 85%",
+          end: "bottom 15%",
+          toggleActions: "play none none reverse"
+        }
+      });
+    }
+
+    // Cleanup function
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
   return (
-    <div className="contact-us min-h-screen py-6 sm:py-10 lg:py-16 px-4 sm:px-6 lg:px-8">
+    <div className="contact-us min-h-screen py-6 sm:py-10 lg:py-16 px-4 sm:px-6 lg:px-8 ">
       {/* Gallery-style Header */}
-      <div className="max-w-6xl mx-auto mb-8 sm:mb-12 lg:mb-16">
+      <div ref={titleRef} className="max-w-6xl mx-auto mb-8 sm:mb-12 lg:mb-16">
         <div className='flex items-center w-full gap-2 sm:gap-4 mb-8 sm:mb-10 lg:mb-12'>
           <div className='bg-white h-8 sm:h-12 lg:h-16 flex-1 rounded-sm shadow-lg'></div>
           <h1 className='text-2xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-bold text-white tracking-wider text-center px-2 sm:px-4 lg:px-8'>
@@ -53,7 +145,7 @@ const ContactUs: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 lg:items-stretch">
           {/* Contact Information */}
-          <div className="flex-1 flex flex-col">
+          <div ref={contactInfoRef} className="flex-1 flex flex-col">
             <div className="bg-black/80 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/20 shadow-2xl shadow-white/10 flex-1 flex flex-col">
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6">Get In Touch</h2>
               <p className="text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed mb-4 sm:mb-6">
@@ -107,7 +199,7 @@ const ContactUs: React.FC = () => {
 
               {/* Social Media */}
               <div className='w-full px-2 bg-white rounded-full h-[1px] sm:h-[2px] my-3 sm:my-4'></div>
-              <div className="flex gap-2 sm:gap-3 lg:gap-4 pt-2 justify-center lg:justify-start">
+              <div ref={socialRef} className="flex gap-2 sm:gap-3 lg:gap-4 pt-2 justify-center lg:justify-start">
                 <a 
                   href="https://www.linkedin.com/company/robosocnith/mycompany/" 
                   className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-lg border border-white/20 flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 group"
@@ -148,7 +240,7 @@ const ContactUs: React.FC = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="flex-1 flex flex-col">
+          <div ref={formRef} className="flex-1 flex flex-col">
             <div className="bg-black/80 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/20 shadow-2xl shadow-white/10 flex-1 flex flex-col">
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6">Send us a Message</h2>
               
