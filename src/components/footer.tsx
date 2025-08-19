@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
               <a href="/projects" className="block text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base py-1 px-2 rounded hover:bg-white/5">Projects</a>
               <a href="/members" className="block text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base py-1 px-2 rounded hover:bg-white/5">Members</a>
               <a href="/achievements" className="block text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base py-1 px-2 rounded hover:bg-white/5">Achievements</a>
-              <a href="/inventory" className="block text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base py-1 px-2 rounded hover:bg-white/5">Inventory</a>
+              <a href="/Campaign's" className="block text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base py-1 px-2 rounded hover:bg-white/5">Campaign's</a>
               <a href="/about" className="block text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base py-1 px-2 rounded hover:bg-white/5">About Us</a>
               <a href="/contact" className="block text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base py-1 px-2 rounded hover:bg-white/5">Contact Us</a>
             </div>
