@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useLenis } from './hooks/useLenis'
+import ThreeModel from './usethreemodel'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -119,7 +120,12 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
       <div ref={wrapperRef} className="relative">
-        <div ref={heroRef} className='h-screen flex justify-center items-center flex-col fixed inset-0'>
+        {/* Three.js Background */}
+        <div className="fixed inset-0 z-0">
+          <ThreeModel />
+        </div>
+        
+        <div ref={heroRef} className='h-screen flex justify-center items-center flex-col fixed inset-0 z-10'>
           <div className="text-center space-y-4 max-w-4xl md:mx-auto ml-16 px-4">
             <h1 className='text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent hover:from-blue-200 hover:via-white hover:to-blue-200 transition-all duration-300 cursor-pointer mb-3'>
               Welcome to RoboSoc
@@ -235,7 +241,7 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <div className="py-12 flex flex-row justify-center items-center">
+      <div className="py-12 flex flex-row justify-center items-center relative z-20">
         <div ref={statsRef} className="max-w-4xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             <div className="text-center">

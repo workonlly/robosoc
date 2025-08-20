@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import ThreeModel from './usethreemodel'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -129,7 +130,13 @@ const ContactUs: React.FC = () => {
   }, []);
 
   return (
-    <div className="contact-us min-h-screen py-6 sm:py-10 lg:py-16 px-4 sm:px-6 lg:px-8 ">
+    <div className="contact-us min-h-screen py-6 sm:py-10 lg:py-16 px-4 sm:px-6 lg:px-8 relative">
+      {/* Three.js Background */}
+      <div className="fixed inset-0 z-0">
+        <ThreeModel />
+      </div>
+      
+      <div className="relative z-10">
       {/* Gallery-style Header */}
       <div ref={titleRef} className="max-w-6xl mx-auto mb-8 sm:mb-12 lg:mb-16">
         <div className='flex items-center w-full gap-2 sm:gap-4 mb-8 sm:mb-10 lg:mb-12'>
@@ -315,6 +322,7 @@ const ContactUs: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   )
