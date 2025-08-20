@@ -146,7 +146,7 @@ const Home: React.FC = () => {
         </div>
 
         {/* Spacer to account for fixed hero */}
-        <div className="h-screen"></div>
+        <div className="h-screen mt-2"></div>
 
         <div ref={purposeSectionRef} className='relative z-20 py-16 px-4 bg-gradient-to-br from-black/90 to-black/70 m-4 rounded-2xl shadow-2xl shadow-white/20 backdrop-blur-md border border-white/10'>
           <div className="max-w-6xl mx-auto">
