@@ -93,7 +93,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ item }) => {
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative bg-gradient-to-br from-black via-gray-900 to-gray-800 rounded-2xl md:rounded-3xl shadow-xl md:shadow-2xl overflow-hidden flex flex-col md:flex-row group w-full transition-all duration-500 ease-out hover:shadow-white/20"
+      className="relative bg-gradient-to-br from-black via-gray-900 to-gray-800 rounded-2xl md:rounded-3xl shadow-xl md:shadow-2xl overflow-hidden flex flex-col w-full h-[720px] group transition-all duration-500 ease-out hover:shadow-white/20"
       style={{
         '--mouse-x': '50%',
         '--mouse-y': '50%',
@@ -117,49 +117,37 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ item }) => {
           transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
         }}
       />
-      
-      {/* Content container */}
-      <div className="relative z-20 flex flex-col md:flex-row w-full h-full">
-        {/* Text section */}
-        <div className="p-4 sm:p-5 md:p-6 lg:p-8 flex-1 flex flex-col justify-center bg-black backdrop-blur-sm rounded-b-2xl md:rounded-l-3xl md:rounded-br-none">
-          <h2 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold md:font-extrabold mb-3 md:mb-4 pl-4 sm:pl-5 md:pl-6 py-1.5 md:py-2 relative flex items-center transition-all duration-300">
-            <span className="absolute left-0 top-1/2 -translate-y-1/2 h-5 sm:h-6 md:h-8 lg:h-10 w-1 sm:w-1.5 md:w-2 rounded-full bg-gradient-to-b from-white via-gray-300 to-gray-600 shadow-md md:shadow-lg shadow-white/30"></span>
-            <span className="relative z-10 px-2 sm:px-2.5 md:px-3 py-1 sm:py-1.5 md:py-2 bg-black/20 rounded-lg md:rounded-xl shadow-md md:shadow-lg text-white hover:bg-gray-800/30 hover:shadow-white/20 transition-all duration-300 backdrop-blur-sm border border-gray-500/20 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
-              {item.title}
-            </span>
-          </h2>
-          <p className="text-gray-200 text-xs sm:text-sm md:text-base leading-relaxed font-medium drop-shadow-sm group-hover:text-white transition-colors duration-300 px-1 sm:px-0">
-            {item.description}
-          </p>
-        </div>
-        
-        {/* Image section */}
-        <div className="w-full md:w-72 lg:w-80 xl:w-96 h-48 sm:h-56 md:h-auto bg-black flex items-center justify-center overflow-hidden rounded-t-2xl md:rounded-t-none md:rounded-r-3xl">
-          <div className="w-full h-full p-2 md:p-3">
-            <img
-              src={item.image}
-              alt={item.title}
-              className="object-cover w-full h-full rounded-xl md:rounded-2xl transition-all duration-500 ease-out hover:scale-105 shadow-md md:shadow-lg border border-gray-600/50"
-              style={{ 
-                minHeight: '180px',
-                maxHeight: '220px md:300px',
-                filter: 'brightness(0.9) contrast(1.1)',
-              }}
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-                target.parentElement!.innerHTML = `
-                  <div class="w-full h-full bg-gradient-to-br from-black to-gray-700 rounded-xl md:rounded-2xl flex items-center justify-center">
-                    <div class="text-center text-gray-300">
-                      <div class="text-2xl md:text-4xl mb-2">🤖</div>
-                      <div class="text-xs md:text-sm font-medium px-2">${item.title}</div>
-                    </div>
-                  </div>
-                `;
-              }}
-            />
-          </div>
-        </div>
+      {/* Image on top */}
+      <div className="w-full h-64 flex-shrink-0 flex items-center justify-center overflow-hidden rounded-t-2xl">
+        <img
+          src={item.image}
+          alt={item.title}
+          className="object-cover w-full h-full rounded-t-2xl transition-all duration-500 ease-out hover:scale-105 shadow-md md:shadow-lg border-b border-gray-600/50"
+          style={{
+            filter: 'brightness(0.9) contrast(1.1)',
+          }}
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.style.display = 'none';
+            target.parentElement!.innerHTML = `
+              <div class=\"w-full h-full bg-gradient-to-br from-black to-gray-700 rounded-t-2xl flex items-center justify-center\">
+                <div class=\"text-center text-gray-300\">
+                  <div class=\"text-2xl md:text-4xl mb-2\">🤖</div>
+                  <div class=\"text-xs md:text-sm font-medium px-2\">${item.title}</div>
+                </div>
+              </div>
+            `;
+          }}
+        />
+      </div>
+      {/* Title and description below image */}
+      <div className="flex flex-col flex-1 justify-start p-4 sm:p-5 md:p-6 lg:p-8 bg-black/80 backdrop-blur-sm rounded-b-2xl">
+        <h2 className="text-base sm:text-lg md:text-xl font-bold mb-2 text-white text-center flex-shrink-0">
+          {item.title}
+        </h2>
+        <p className="text-gray-200 text-xs sm:text-sm md:text-base leading-relaxed font-medium text-center flex-1 overflow-hidden">
+          {item.description}
+        </p>
       </div>
     </div>
   );
@@ -329,30 +317,32 @@ const Projects: React.FC = () => {
       <div className="fixed inset-0 z-0">
         <ThreeModel />
       </div>
-      
+
       <div className="relative z-10">
-      {/* Header Section */}
-      <div ref={titleRef} className="max-w-6xl mx-auto mb-6 sm:mb-8 lg:mb-12 pt-4 px-3 sm:px-4 md:px-5">
-        <div className='flex items-center w-full gap-2 sm:gap-4 mb-6 sm:mb-8 lg:mb-10'>
-          <div className='bg-white h-6 sm:h-8 md:h-12 lg:h-16 flex-1 rounded-sm shadow-md md:shadow-lg'></div>
-          <h1 className='text-xl sm:text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white tracking-wider text-center px-2 sm:px-4 lg:px-6'>
-            PROJECTS
-          </h1>
-          <div className='bg-white h-6 sm:h-8 md:h-12 lg:h-16 w-12 sm:w-16 md:w-24 lg:w-32 rounded-sm shadow-md md:shadow-lg flex items-center justify-center'>
+        {/* Header Section */}
+        <div ref={titleRef} className="max-w-6xl mx-auto mb-6 sm:mb-8 lg:mb-12 pt-4 px-3 sm:px-4 md:px-5">
+          <div className='flex items-center w-full gap-2 sm:gap-4 mb-6 sm:mb-8 lg:mb-10'>
+            <div className='bg-white h-6 sm:h-8 md:h-12 lg:h-16 flex-1 rounded-sm shadow-md md:shadow-lg'></div>
+            <h1 className='text-xl sm:text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white tracking-wider text-center px-2 sm:px-4 lg:px-6'>
+              PROJECTS
+            </h1>
+            <div className='bg-white h-6 sm:h-8 md:h-12 lg:h-16 w-12 sm:w-16 md:w-24 lg:w-32 rounded-sm shadow-md md:shadow-lg flex items-center justify-center'>
+            </div>
           </div>
         </div>
-      </div>
-      
-      {/* Projects Grid */}
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 pb-12 md:pb-16">
-        <div ref={cardsRef} className="flex flex-col gap-6 sm:gap-8 md:gap-12 lg:gap-16">
-          {projects.map((item) => (
-            <GlowCardWrapper key={item.title}>
-              <ProjectCard item={item} />
-            </GlowCardWrapper>
-          ))}
+
+        {/* Projects Grid as cards */}
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 pb-12 md:pb-16">
+          <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-stretch">
+            {projects.map((item) => (
+              <GlowCardWrapper key={item.title}>
+                <div className="flex flex-col h-full flex-1 min-h-full">
+                  <ProjectCard item={item} />
+                </div>
+              </GlowCardWrapper>
+            ))}
+          </div>
         </div>
-      </div>
       </div>
     </div>
   )
