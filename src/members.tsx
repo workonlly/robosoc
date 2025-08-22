@@ -143,7 +143,7 @@ const Members: React.FC = () => {
       </div>
 
       <div className="max-w-4xl mx-auto">
-        <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 justify-items-center">
+        <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center">
           {allMembers.length === 0 ? (
             <div className="col-span-full text-center">
               <p className="text-white text-center">Loading members...</p>
