@@ -117,17 +117,7 @@ const Header: React.FC = () => {
               </svg>
             </Link>
           </li>
-          <li>
-            <Link 
-              to="/members" 
-              onClick={scrollToTop}
-              className='flex items-center justify-center w-full h-10 text-white bg-gradient-to-br from-white/15 to-white/5 shadow-lg shadow-white/20 ring-1 ring-white/30 rounded-xl border border-white/25 backdrop-blur-sm font-medium transition-all duration-300 hover:shadow-white/40 hover:scale-105'
-            >
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
-              </svg>
-            </Link>
-          </li>
+         
           <li>
             <Link 
               to="/achievements" 
@@ -141,12 +131,23 @@ const Header: React.FC = () => {
           </li>
           <li>
             <Link 
-              to="/inventory" 
+              to="/Campaign's" 
               onClick={scrollToTop}
               className='flex items-center justify-center w-full h-10 text-white bg-gradient-to-br from-white/15 to-white/5 shadow-lg shadow-white/20 ring-1 ring-white/30 rounded-xl border border-white/25 backdrop-blur-sm font-medium transition-all duration-300 hover:shadow-white/40 hover:scale-105'
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 2L3 7v11a1 1 0 001 1h12a1 1 0 001-1V7l-7-5zM8.5 13a1.5 1.5 0 103 0 1.5 1.5 0 00-3 0z" clipRule="evenodd"/>
+              </svg>
+            </Link>
+          </li>
+           <li>
+            <Link 
+              to="/members" 
+              onClick={scrollToTop}
+              className='flex items-center justify-center w-full h-10 text-white bg-gradient-to-br from-white/15 to-white/5 shadow-lg shadow-white/20 ring-1 ring-white/30 rounded-xl border border-white/25 backdrop-blur-sm font-medium transition-all duration-300 hover:shadow-white/40 hover:scale-105'
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
               </svg>
             </Link>
           </li>
