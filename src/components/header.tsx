@@ -34,15 +34,7 @@ const Header: React.FC = () => {
               Projects
             </Link>
           </li>
-          <li>
-            <Link 
-              to="/members" 
-              onClick={scrollToTop}
-              className='px-3 py-1.5 text-sm text-gray-200 hover:text-white hover:bg-white/10 hover:shadow-lg hover:shadow-white/20 hover:shadow-white/50 hover:ring-2 hover:ring-white/30 rounded-lg transition-all duration-300 border border-transparent hover:border-white/40 backdrop-blur-sm glow-box'
-            >
-              Members
-            </Link>
-          </li>
+         
           <li>
             <Link 
               to="/achievements" 
@@ -52,6 +44,7 @@ const Header: React.FC = () => {
               Achievements
             </Link>
           </li>
+          
           <li>
             <Link 
               to="/Campaign's" 
@@ -59,6 +52,15 @@ const Header: React.FC = () => {
               className='px-3 py-1.5 text-sm text-gray-200 hover:text-white hover:bg-white/10 hover:shadow-lg hover:shadow-white/20 hover:shadow-white/50 hover:ring-2 hover:ring-white/30 rounded-lg transition-all duration-300 border border-transparent hover:border-white/40 backdrop-blur-sm glow-box'
             >
               Campaign's
+            </Link>
+          </li>
+           <li>
+            <Link 
+              to="/members" 
+              onClick={scrollToTop}
+              className='px-3 py-1.5 text-sm text-gray-200 hover:text-white hover:bg-white/10 hover:shadow-lg hover:shadow-white/20 hover:shadow-white/50 hover:ring-2 hover:ring-white/30 rounded-lg transition-all duration-300 border border-transparent hover:border-white/40 backdrop-blur-sm glow-box'
+            >
+              Members
             </Link>
           </li>
                     <li>

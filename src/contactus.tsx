@@ -172,7 +172,7 @@ const ContactUs: React.FC = () => {
                   <div className="flex-1 min-w-0">
                     <p className="text-white font-semibold text-xs sm:text-sm lg:text-base">Email</p>
                     <a href="mailto:robosoc@nith.ac.in" className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm lg:text-base break-all">
-                      robosoc@nith.ac.in
+                      robonith@nith.ac.in
                     </a>
                   </div>
                 </div>

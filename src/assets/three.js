@@ -8,7 +8,7 @@ export function initThree(container) {
   const camera = new THREE.PerspectiveCamera(
     75, container.clientWidth / container.clientHeight, 0.1, 1000
   );
-  camera.position.set(0, 0, 15);
+  camera.position.set(0, 0, 20);
 
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize(container.clientWidth, container.clientHeight);
@@ -16,18 +16,27 @@ export function initThree(container) {
 
   // (OrbitControls removed)
 
-  // Lighting: cool, neutral, modern
-  scene.add(new THREE.AmbientLight(0xbfc6d1, 0.45)); // soft blue-gray ambient
-  const dirLight = new THREE.DirectionalLight(0xe0e6ee, 0.85); // cool white
-  dirLight.position.set(5, 10, 7);
-  scene.add(dirLight);
+  // Simple White Lighting Setup
+  // 1. Ambient light - soft overall illumination
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.4); // White ambient
+  scene.add(ambientLight);
+
+  // 2. Main directional light
+  const mainLight = new THREE.DirectionalLight(0xffffff, 0.8); // White directional light
+  mainLight.position.set(10, 10, 5);
+  scene.add(mainLight);
+
+  // 3. Fill light from opposite side
+  const fillLight = new THREE.DirectionalLight(0xffffff, 0.3); // White fill light
+  fillLight.position.set(-5, 5, -5);
+  scene.add(fillLight);
 
   // GEAR PARAMETERS
   const teeth = 12;
-  const outerRadius = 5;
-  const innerRadius = 3.5;
-  const holeRadius = 2.3;
-  const thickness = 1.3;
+  const outerRadius = 8;     // Increased from 5 to 8
+  const innerRadius = 5.6;   // Increased from 3.5 to 5.6 (maintaining proportion)
+  const holeRadius = 3.7;    // Increased from 2.3 to 3.7 (maintaining proportion)
+  const thickness = 2.1;     // Increased from 1.3 to 2.1 (maintaining proportion)
 
   // Equal tip and valley widths, flanks split the rest
   const tipFlatFrac = 0.3;      // flat part at the tip (tooth top)
@@ -97,85 +106,19 @@ export function initThree(container) {
     envMapIntensity: 0.7
   });
   const gear = new THREE.Mesh(geometry, material);
-  gear.castShadow = true;
-  gear.receiveShadow = true;
   gear.position.set(0, 0, -thickness / 2);
   gear.rotation.x = -Math.PI / 5; // Align flat to the ground
   gear.rotation.y = Math.PI / 9; // Rotate to face camera
 
   scene.add(gear);
 
-  // Soft shadow plane (cool gray, not black)
-  const shadowGeometry = new THREE.CircleGeometry(outerRadius * 1.2, 32);
-  const shadowMaterial = new THREE.ShadowMaterial({ color: 0x22262a, opacity: 0.18 });
-  const shadowMesh = new THREE.Mesh(shadowGeometry, shadowMaterial);
-  shadowMesh.rotation.x = -Math.PI / 2;
-  shadowMesh.position.y = -thickness / 2 - 0.05;
-  shadowMesh.receiveShadow = true;
-  scene.add(shadowMesh);
-
   // Animation loop
-
-  let isHovering = false;
-  let targetRotation = 0;
-  let currentRotation = 0;
-  const rotationSpeed = 0.08; // Increased for smoother, faster animation
-
-  // Make sure the canvas has proper pointer events
-  renderer.domElement.style.pointerEvents = 'all';
-  renderer.domElement.style.cursor = 'pointer';
-
-  // Add raycaster for more reliable hover detection
-  const raycaster = new THREE.Raycaster();
-  const mouse = new THREE.Vector2();
-
-  function onMouseMove(event) {
-    const rect = renderer.domElement.getBoundingClientRect();
-    mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-    mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
-
-    raycaster.setFromCamera(mouse, camera);
-    const intersects = raycaster.intersectObject(gear);
-
-    if (intersects.length > 0) {
-      if (!isHovering) {
-        isHovering = true;
-        targetRotation = currentRotation + Math.PI * 2; // 360 degrees from current position
-        renderer.domElement.style.cursor = 'pointer';
-      }
-    } else {
-      if (isHovering) {
-        isHovering = false;
-        targetRotation = Math.floor(currentRotation / (Math.PI * 2)) * Math.PI * 2; // Snap to nearest full rotation
-        renderer.domElement.style.cursor = 'default';
-      }
-    }
-  }
-
-  renderer.domElement.addEventListener('mousemove', onMouseMove);
-  renderer.domElement.addEventListener('mouseenter', () => { 
-    renderer.domElement.style.cursor = 'pointer';
-  });
-  renderer.domElement.addEventListener('mouseleave', () => { 
-    isHovering = false; 
-    targetRotation = Math.floor(currentRotation / (Math.PI * 2)) * Math.PI * 2;
-    renderer.domElement.style.cursor = 'default';
-  });
-
   function animate() {
     requestAnimationFrame(animate);
     
-    // Smoother interpolation with easing
-    const diff = targetRotation - currentRotation;
-    if (Math.abs(diff) > 0.001) {
-      currentRotation += diff * rotationSpeed;
-      gear.rotation.z = currentRotation;
-    }
-    
-    // Add a subtle continuous rotation when not hovering
-    if (!isHovering) {
-      gear.rotation.y += 0.002;
-    }
+    // Continuous rotation
+    gear.rotation.z += 0.01;
+    gear.rotation.y += 0.002;
     
     renderer.render(scene, camera);
   }

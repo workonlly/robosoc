@@ -2,31 +2,34 @@ import React from 'react'
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gradient-to-t from-black via-white/10 to-black border-t border-white/10 mt-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 lg:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
+    <footer className="bg-gradient-to-t from-black via-gray-950/95 to-black border-t border-gray-800/50 mt-20 relative">
+      {/* Subtle top accent line */}
+      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10 lg:py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 mb-8 sm:mb-10">
           
-          <div className="space-y-3 sm:space-y-4 text-center md:text-left md:col-span-2 lg:col-span-1">
+          <div className="space-y-4 sm:space-y-5 text-center md:text-left md:col-span-2 lg:col-span-1">
             <div className="logo">
-              <h2 className='text-2xl sm:text-3xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent hover:from-blue-200 hover:via-white hover:to-blue-200 transition-all duration-300 cursor-pointer'>
+              <h2 className='text-3xl sm:text-4xl font-bold bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent hover:from-blue-200 hover:via-white hover:to-blue-200 transition-all duration-500 cursor-pointer drop-shadow-lg'>
                 RoboSoc
               </h2>
             </div>
-            <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-sm mx-auto md:mx-0">
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-sm mx-auto md:mx-0">
               Pioneering the future of robotics and innovation. Building tomorrow's technology today through passionate engineering and collaborative research.
             </p>
+            <div className="h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent max-w-xs mx-auto md:mx-0"></div>
           </div>
 
-          <div className="space-y-3 sm:space-y-4">
-            <h3 className="text-white font-semibold text-lg sm:text-xl text-center md:text-left">Quick Links</h3>
-            <div className="grid grid-cols-2 md:grid-cols-1 gap-2 text-center md:text-left">
-              <a href="/" className="block text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base py-1 px-2 rounded hover:bg-white/5">Home</a>
-              <a href="/projects" className="block text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base py-1 px-2 rounded hover:bg-white/5">Projects</a>
-              <a href="/members" className="block text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base py-1 px-2 rounded hover:bg-white/5">Members</a>
-              <a href="/achievements" className="block text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base py-1 px-2 rounded hover:bg-white/5">Achievements</a>
-              <a href="/Campaign's" className="block text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base py-1 px-2 rounded hover:bg-white/5">Campaign's</a>
-              <a href="/about" className="block text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base py-1 px-2 rounded hover:bg-white/5">About Us</a>
-              <a href="/contact" className="block text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base py-1 px-2 rounded hover:bg-white/5">Contact Us</a>
+          <div className="space-y-4 sm:space-y-5">
+            <h3 className="text-white font-bold text-xl sm:text-2xl text-center md:text-left bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">Quick Links</h3>
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-3 text-center md:text-left">
+              <a href="/" className="block text-gray-300 hover:text-white transition-all duration-300 text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-gray-800/50 hover:shadow-md hover:shadow-gray-700/20 border border-transparent hover:border-gray-700/30">Home</a>
+              <a href="/projects" className="block text-gray-300 hover:text-white transition-all duration-300 text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-gray-800/50 hover:shadow-md hover:shadow-gray-700/20 border border-transparent hover:border-gray-700/30">Projects</a>
+              <a href="/achievements" className="block text-gray-300 hover:text-white transition-all duration-300 text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-gray-800/50 hover:shadow-md hover:shadow-gray-700/20 border border-transparent hover:border-gray-700/30">Achievements</a>
+              <a href="/Campaign's" className="block text-gray-300 hover:text-white transition-all duration-300 text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-gray-800/50 hover:shadow-md hover:shadow-gray-700/20 border border-transparent hover:border-gray-700/30">Campaign's</a>
+              <a href="/members" className="block text-gray-300 hover:text-white transition-all duration-300 text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-gray-800/50 hover:shadow-md hover:shadow-gray-700/20 border border-transparent hover:border-gray-700/30">Members</a>
+              <a href="/about" className="block text-gray-300 hover:text-white transition-all duration-300 text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-gray-800/50 hover:shadow-md hover:shadow-gray-700/20 border border-transparent hover:border-gray-700/30">About Us</a>
+              <a href="/contact" className="block text-gray-300 hover:text-white transition-all duration-300 text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-gray-800/50 hover:shadow-md hover:shadow-gray-700/20 border border-transparent hover:border-gray-700/30">Contact Us</a>
             </div>
           </div>
 
@@ -35,8 +38,8 @@ const Footer: React.FC = () => {
             <div className="space-y-3 sm:space-y-4">
               <div className="text-gray-400 text-sm sm:text-base">
                 <span className="block font-medium text-white mb-1">Email:</span>
-                <a href="mailto:robosoc@nith.ac.in" className="hover:text-white transition-colors duration-300 break-all">
-                  robosoc@nith.ac.in
+                <a href="mailto:robonith@nith.ac.in" className="hover:text-white transition-colors duration-300 break-all">
+                  robonith@nith.ac.in
                 </a>
               </div>
               <div className="text-gray-400 text-sm sm:text-base">
