@@ -150,10 +150,10 @@ const Members: React.FC = () => {
             </div>
           ) : (
             allMembers.map((member) => (
-              <div key={member.$id} className="group relative">
-                <div className="bg-gradient-to-br from-gray-900 via-black to-gray-800 shadow-2xl shadow-black/50 hover:shadow-white/20 transition-all duration-500 hover:scale-105 overflow-hidden h-[26rem] flex flex-col rounded-2xl border border-gray-700/50 hover:border-white/30">
+              <div key={member.$id} className="group relative w-72">
+                <div className="bg-gradient-to-br from-gray-900 via-black to-gray-800 shadow-2xl shadow-black/50 hover:shadow-white/20 transition-all duration-500 hover:scale-105 overflow-hidden h-[26rem] w-full flex flex-col rounded-2xl border border-gray-700/50 hover:border-white/30">
                   {/* Profile Image Container */}
-                  <div className="relative w-72 h-72 bg-gradient-to-br from-gray-800 to-black overflow-hidden flex-shrink-0 rounded-t-2xl group/image">
+                  <div className="relative w-full h-72 bg-gradient-to-br from-gray-800 to-black overflow-hidden flex-shrink-0 rounded-t-2xl group/image">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"></div>
                     
                     {/* Profile Image */}
