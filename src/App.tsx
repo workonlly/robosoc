@@ -27,7 +27,7 @@ function App() {
             <Route path="/contact" element={<ContactUs />} />
           </Routes>
         </main>
-        <div className="md:ml-0 ml-20 transition-all duration-300 relative z-30">
+        <div className="md:ml-0 ml-16 transition-all duration-300 relative z-30">
           <Footer />
         </div>
       </div>
