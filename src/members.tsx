@@ -204,7 +204,7 @@ const Members: React.FC = () => {
                       
                       {/* Social Media Icons */}
                       <div className="flex flex-row gap-2 ml-2">
-                        <a href="" className="group/icon">
+                        <a href={member.github} className="group/icon">
                           <div className="w-8 h-8 bg-gradient-to-br from-gray-700 to-black rounded-lg flex items-center justify-center hover:from-gray-600 hover:to-gray-800 transition-all duration-300 shadow-md hover:shadow-lg">
                             {/* GitHub SVG */}
                             <svg className="w-5 h-5 fill-white group-hover/icon:scale-110 transition-all duration-300" viewBox="0 0 24 24">
@@ -212,7 +212,7 @@ const Members: React.FC = () => {
                             </svg>
                           </div>
                         </a>
-                        <a href="" className="group/icon">
+                        <a href={member.linkedin} className="group/icon">
                           <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center hover:from-blue-500 hover:to-blue-700 transition-all duration-300 shadow-md hover:shadow-lg">
                             {/* LinkedIn SVG */}
                             <svg className="w-5 h-5 fill-white group-hover/icon:scale-110 transition-all duration-300" viewBox="0 0 24 24">
@@ -220,7 +220,7 @@ const Members: React.FC = () => {
                             </svg>
                           </div>
                         </a>
-                        <a href="" className="group/icon">
+                        <a href={member.insta} className="group/icon">
                           <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-purple-600 rounded-lg flex items-center justify-center hover:from-pink-400 hover:to-purple-500 transition-all duration-300 shadow-md hover:shadow-lg">
                             {/* Instagram SVG */}
                             <svg className="w-5 h-5 fill-white group-hover/icon:scale-110 transition-all duration-300" viewBox="0 0 24 24">

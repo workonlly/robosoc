@@ -9,6 +9,7 @@ import Members from './members'
 import Achievements from './achievement'
 import Inventory from './inventory'
 import ContactUs from './contactus'
+import AdminPanel from './admin'
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path="/achievements" element={<Achievements />} />
             <Route path="/Campaign's" element={<Inventory />} />
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/admin" element={<AdminPanel />} />
           </Routes>
         </main>
         <div className="md:ml-0 ml-16 transition-all duration-300 relative z-30">

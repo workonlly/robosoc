@@ -7,7 +7,7 @@ const Header: React.FC = () => {
 
   return (<>
     <header className="w-full hidden md:block sticky top-3 z-50">
-      <nav className='flex items-center justify-between px-6 py-3 mx-3  rounded-xl bg-gradient-to-r from-black via-black/95 to-black/20 backdrop-blur-sm border border-gray-700/50 shadow-2xl'>
+      <nav className='flex items-center justify-between px-6 py-3 mx-3  rounded-xl bg-black/30 backdrop-blur-sm border border-gray-700/50 shadow-2xl'>
         <div className="logo flex items-center space-x-3">
           <img className='h-8 w-8 object-contain transition-all duration-300 cursor-pointer hover:scale-110' src="/logo.png" alt="RoboSoc Logo" />
           <h2 className='text-xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent hover:from-blue-200 hover:via-white hover:to-blue-200 transition-all duration-300 cursor-pointer'>
