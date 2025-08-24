@@ -31,7 +31,7 @@ const AdminPanel: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [selectedMember, setSelectedMember] = useState<Member | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedYear, setSelectedYear] = useState<number | null>(null);
+
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [memberToDelete, setMemberToDelete] = useState<Member | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -437,7 +437,6 @@ const AdminPanel: React.FC = () => {
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedMember(null);
-    setSelectedYear(null);
   };
 
   if (loading) {
