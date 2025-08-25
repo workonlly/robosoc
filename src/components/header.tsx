@@ -9,7 +9,7 @@ const Header: React.FC = () => {
     <header className="w-full hidden md:block sticky top-3 z-50">
       <nav className='flex items-center justify-between px-6 py-3 mx-3  rounded-xl bg-black/30 backdrop-blur-sm border border-gray-700/50 shadow-2xl'>
         <div className="logo flex items-center space-x-3">
-          <img className='h-8 w-8 object-contain transition-all duration-300 cursor-pointer hover:scale-110' src="/logo.png" alt="RoboSoc Logo" />
+          <img className='h-8 w-8 object-contain transition-all duration-300 cursor-pointer hover:scale-110' src="/Robosoc logo 1080x1080.png" alt="RoboSoc Logo" />
           <h2 className='text-xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent hover:from-blue-200 hover:via-white hover:to-blue-200 transition-all duration-300 cursor-pointer'>
             RoboSoc
           </h2>
@@ -89,7 +89,7 @@ const Header: React.FC = () => {
       <nav className='flex flex-col h-full py-4 bg-gradient-to-b from-black/95 via-black/90 to-black/85 backdrop-blur-md border-r border-white/20 shadow-2xl'>
         <div className="logo mb-6">
           <div className='w-10 h-10 mx-auto bg-gradient-to-br from-white/20 to-white/10 rounded-xl shadow-lg shadow-white/25 flex items-center justify-center border border-white/30'>
-            <img className='w-6 h-6 object-contain' src="/logo.png" alt="RoboSoc Logo" />
+            <img className='w-6 h-6 object-contain' src="/Robosoc logo 1080x1080.png" alt="RoboSoc Logo" />
           </div>
         </div>
         

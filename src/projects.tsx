@@ -157,131 +157,131 @@ const projects = [
   {
     title: "SWARM ROBOTICS",
     description: "Swarm robotics is an approach to the coordination of multiple robots as a system which consist of large numbers of mostly simple physical robots. It is supposed that a desired collective behavior emerges from the interactions between the robots and interactions of robots with the environment.",
-    image: "path/to/image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2Fswarm%20project%20%20(1).jpg%20%201696952686569?alt=media&token=2a9bb93b-fce3-45af-9942-aaa2d111d5fb",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "HUMANIOD ROBOT",
     description: "Humanoid robot is a robot that operates like a human body. These robots must be capable of dealing with a wide range of tasks and objects encountered in dynamic unstructured environments. They require a lightweight body, high flexibility, a variety of sensors, and artificial intelligence.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2Fhumanoid.png%20%201696952763954?alt=media&token=2d8045d9-bc9e-44c1-b5db-841ca1bf2f58",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "S.L.A.M (SIMULTANEOUS LOCALIZATION AND MAPPING)",
     description: "It is the computational problem of constructing or updating a map of an unknown environment while simultaneously keeping track of an agent's location within it. Map data can be used to perform tasks such as path planning and obstacle avoidance.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith/SLAM_CAR_Robosoc"
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2FSlam.png%20%201696952897005?alt=media&token=7872b201-3890-408c-93b1-7e2d7c04b936",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "DRIVER-LESS CAR",
     description: "A self-driving vehicle that is capable of sensing it's environment and moving with little or no human input. Autonomous cars combine a variety of sensors to perceive their surrounding such as RADAR, computer vision, LADAR, SONAR, odometry and inertial measurement units.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2Fdriverless_car%20(1).jpg%20%201696952957005?alt=media&token=0466ebf1-df93-417f-b905-e833a256c425",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "RUBIC CUBE SOLVER",
     description: "Cube images are captured by a python program module, then color extraction for each sticker is processed by other program module and finally the cube is solved by Kociemba algorithm, the solution is sent to Arduino trough a serial port. Once the solution is received the Arduino code start to be processing the movements, after 6-8 minutes the process finish and the robot show all the faces of the cube solved.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2FRUBIX_CLUB_SOLVER.png%20%201696953047702?alt=media&token=2d68c143-2c40-40fd-90f5-0dc08d764571",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "3-D PRINTER",
     description: "The process of creating three-dimensional solid objects from a digital file is known as 3D printing or additive manufacturing and a device that helps to achieve this is a 3D printer. An object is created in an additive process by laying down successive layers of material until the object is complete. Each of these layers is a thinly sliced cross-section of the object. It allows you to create complex shapes while using less material than traditional manufacturing methods.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2F3D.png%20%201696953101595?alt=media&token=284cc8c6-36b3-49fa-8d3a-cbb71fb9d2f3",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "TETRIS",
     description: "A Tetris is a tile-matching puzzle game. The game has a simple goal of destroying lines of block before it reaches the top. The line is made up of a square block. Tetrominoes is the shape of the 4 connected blocks that falls vertically down.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2FTetris.png%20%201696953205004?alt=media&token=a2d71a17-926d-4ac6-8968-e95e61d4f6ff",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "HOME AUTOMATION",
     description: "Home automation or domestics is building automation for a home, called a smart home or smart house. A home automation system will monitor and/or control home attributes such as lighting, climate, entertainment systems, and appliances. It may also include home security such as access control and alarm systems. When connected with the Internet, home devices are an important constituent of IoT.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2Fautomation.jpg%20%201696953814349?alt=media&token=0c3aeb39-c4de-470a-afdb-267b04a06075",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "ROBO RACE",
     description: "The goal of the project Rob race is the development of a software, which can move an autonomous vehicle in the driving dynamic limit area on the track. Subprojects, each of which contributes to the overall software architecture of the vehicle. The focus of the final real integration and testing in the Robocar is on the evaluation of the real-time capability, performance and reliability of the algorithms.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2FRobo_Race.png%20%201696953861293?alt=media&token=6dfbaa20-a10c-4cba-a077-f8b3d8a1e0af",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "CNC MACHINE",
     description: "The CNC machine is made up of a mini-computer or a microcomputer that serves as the machine's controller unit. The programme of instructions in CNC machines is fed directly into the computer via a small board similar to a traditional keyboard. CNC machines are referred to as 'soft-wired' NC because of their capacity and flexibility.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2FCNC.jpg%20%201696953895561?alt=media&token=63e7686c-d7fe-4023-877f-fd2e85180659",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "LINE FOLLOWER ROBOT",
     description: "A line follower is an automated guided vehicle, which follow a visual line(black line on a white surface or other way) embedded on the floor or ceiling. When IR transmitter is on the black surface IR rays were absorbed by the surface and when it is on white surface these IR rays were reflected. The IR receiver has maximum resistance when no IR rays are received and voltage from VCC flows through the resistor. As the intensity IR rays received by the receiver increases, resistance value decreases and reverse break down occurs.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2FLINE_FOLLOWER_BOT.jpg%20%201696954148722?alt=media&token=dbae2d56-928f-4456-9978-8ac0d1bdddab",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "MULTI TERRAIN BOT",
     description: "A mobile robot that are capable of showcasing excellent off-road performances. They are able to navigate across bumpy and rough terrains. It is autonomous, will sense its environment with the help of sensors and then will take further decision on its own, with the help of instructions.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2FMulti.jpg%20%201696954206461?alt=media&token=cc92b5c4-1eba-436c-8296-a7be43ba4520",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "QUADRUPED BOT",
     description: "Quadruped robots can mimic animal walking gait and they have certain advantages like walking on terrain and extremely rough surfaces. Obstacles can impede the movement of wheeled vehicles, where a quadruped can adapt to avoid obstacles by adjusting its height.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2FQUADRUPED_BOT.png%20%201696954244559?alt=media&token=49236571-a096-4e8e-8502-81f20d55e420",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "VISION BASED ROBOT",
     description: "By vision robot, we aimed to develop a robot which could read the surrounding by using a camera and respond accordingly. Our robot was programmed to locate and chase a yellow ball which can next be extended to track and follow signs or symbols as required.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2Fvision.png%20%201696954296478?alt=media&token=6adff67a-a40e-4a83-b487-1fb8b29442f7",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "BCI (BRAIN COMPUTER INTERFACE)",
     description: "We propose an innovative, futuristic and cost-effective Brain Computer Interface (BCI) based wheelchair. The wheelchair helps the patient to navigate from one place to another based on motor imagery model to control a brain actuated wheelchair. The wheelchair.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2Fbci.jpg%20%201696954334785?alt=media&token=83aeaacf-7134-4a0e-bbf8-f386d155c150",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "SELF BALANCING BOT",
     description: "Self-balancing robot is based on the principle of inverted pendulum, which is a two-wheeled vehicle which balances itself up in the vertical position with reference to the ground. It will be prevented from falling by giving acceleration according to its inclination from the vertical.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2Fbalancingbot.jpg%20%201696954372383?alt=media&token=fd8f32a6-43e8-415d-a0d8-16fc62a4be48",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "ROBOTIC ARM",
     description: "The robotic arm is used for multiple industrial applications, from welding, material handling, and thermal spraying, to painting and drilling. We aim to build the robotic hand which will be controlled using leap motion and Arduino. The robotic arm will have four fingers and a thumb built to approximate dimensions of the human hand all using a 3-D printer.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2Frobo-arm.png%20%201696954407878?alt=media&token=3f3f79db-208a-4d18-a5a0-e073465b939b",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "ROBOTIC HAND",
-    description: "To make a fully functional robotic hand that have enough strength to pick objects. The hand is controlled by Leap Motion + Arduino UNO + Servo Motors and the hand itself will be made by 3-D printing. It will recognize each finger and it can move separately with good precision and sensibility depending on the person who is using it.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
+    description: "To make a fully functional robotic hand that have enough strength to pick objects. The hand is controlled by Leap Motion + Arduino UNO + Servo Motors and the hand itself will be made by 3-D printing.  It will recognize each finger and it can move separately with good precision and sensibility depending on the person who is using it.",
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2Farm.jpg%20%201696954453508?alt=media&token=b7f7107e-119a-41c1-b50e-2cd01dba03b9",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "ROBOCON 2018 - Shoot and Pass Shuttles",
     description: "The challenge of ROBOCON 2018 was to shoot and pass the shuttles (ball fixed on a thread) through given rings which were fixed at a distance on poles. Automatic robot with precise locomotion in which a sensor scans the ground for exact positioning. The autonomous robot used a catapult like mechanism to shoot the shuttles through the rings.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2Frobocon19.jpg%20%201696955389625?alt=media&token=4a1831db-a8bb-4b28-99c6-44b19fb92c33",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "FRISBEE THROWER (ROBOCON 2017 BOT)",
     description: "In ROBOCON 2017, the challenge was to build a Frisbee shooting bot that could land Frisbees on given platforms. For this, we made a manually controlled robot that shoots Frisbee with the help of a fast-rotating disc. A notable thing is its locomotion because it can move in the left and right directions without steering wheel.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2Ffrisbee.png%20%201696955447615?alt=media&token=26f52f2e-6bb6-4e04-8aa3-43579e793405",
+    github: "https://github.com/robonith?tab=repositories"
   },
   {
     title: "ECO ROBOT & HYBRID ROBOT (ROBOCON 2016 BOT )",
     description: "Robocon (Robotics Contest) is organized by Asia Pacific Broadcasting Union (ABU) every year and is one of the biggest Robotics competitions in Asia. The theme for the year 2016 was 'Clean Energy Recharging the World'. Two robots, Hybrid and ECO Robot were required for this. ECO Robot didn't have any actuator to drive itself hybrid robot was supposed to give it to energy without any physical contact.",
-    image: "path/to/another-image.jpg",
-    github: "https://github.com/robonith?tab=repositories",
-  },
-  
+    image: "https://firebasestorage.googleapis.com/v0/b/robosoc-database.appspot.com/o/projects%2Fecobot.png%20%201696955515357?alt=media&token=c555c76a-bef2-45d8-8c64-e4d09531aa8b",
+    github: "https://github.com/robonith?tab=repositories"
+  }
 ];
+
 
 const Projects: React.FC = () => {
   const titleRef = useRef<HTMLDivElement>(null);
