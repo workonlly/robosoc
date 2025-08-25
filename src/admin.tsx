@@ -25,7 +25,7 @@ const SESSION_TIMEOUT = 10 * 60 * 1000; // 10 minutes
 const DEMO_USER = { username: 'admin', password: 'robosoc2025' };
 
 const AdminPanel: React.FC = () => {
-  // Auth state
+  
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
     return localStorage.getItem('robosoc_admin_logged_in') === 'true';
   });
