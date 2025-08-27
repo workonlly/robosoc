@@ -188,29 +188,29 @@ const Home: React.FC = () => {
 
             <div>
               <div ref={foundersRef} className='flex flex-wrap justify-center gap-6'>
-                <div className='group relative'>
-                  <div className='bg-transparent shadow-2xl shadow-white/10 hover:shadow-white/20 transition-all duration-300 hover:scale-105 overflow-hidden'>
-                    <div className="w-56 h-72 bg-black overflow-hidden">
-                      <img src="/professor.webp" alt="Dr. Sant Ram Chauhan" className="w-full h-full object-cover" />
+                <div className='group relative flex-1 min-w-56 max-w-64'>
+                  <div className='bg-transparent shadow-2xl shadow-white/10 hover:shadow-white/20 transition-all duration-300 hover:scale-105 overflow-hidden h-full flex flex-col'>
+                    <div className="w-full h-80 bg-black overflow-hidden">
+                      <img src="/professor.jpg" alt="Dr. Sant Ram Chauhan" className="w-full h-full object-cover" />
                     </div>
-                    <div className='bg-white p-2 mt-2'>
-                      <div className="flex justify-between items-start">
+                    <div className='bg-white p-2 mt-2 flex-1'>
+                      <div className="flex justify-between items-start h-full">
                         <div className="flex-1">
-                          <div className="font-bold text-lg text-black">Dr. Sant Ram Chauhan</div>
-                          <div className="text-xs text-gray-600 mb-2">Faculty Coordinator</div>
+                          <div className="font-bold text-lg text-black">Dr. Kirti Mahajan</div>
+                          <div className="text-xs text-gray-600 mb-2"><div>Asst. Faculty Incharge, </div><div>Technical Activities, NIT Hamirpur</div></div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className='group relative'>
-                  <div className='bg-transparent shadow-2xl shadow-white/10 hover:shadow-white/20 transition-all duration-300 hover:scale-105 overflow-hidden'>
-                    <div className="w-56 h-72 bg-black overflow-hidden">
+                <div className='group relative flex-1 min-w-56 max-w-64'>
+                  <div className='bg-transparent shadow-2xl shadow-white/10 hover:shadow-white/20 transition-all duration-300 hover:scale-105 overflow-hidden h-full flex flex-col'>
+                    <div className="w-full h-80 bg-black overflow-hidden">
                       <img src="/kashish.webp" alt="Kashish Verma" className="w-full h-full object-cover" />
                     </div>
-                    <div className='bg-white p-2 mt-2'>
-                      <div className="flex justify-between items-start">
+                    <div className='bg-white p-2 mt-2 flex-1'>
+                      <div className="flex justify-between items-start h-full">
                         <div className="flex-1">
                           <div className="font-bold text-lg text-black">Kashish Verma</div>
                           <div className="text-xs text-gray-600 mb-2">Co-Founder</div>
@@ -220,13 +220,13 @@ const Home: React.FC = () => {
                   </div>
                 </div>
 
-                <div className='group relative'>
-                  <div className='bg-transparent shadow-2xl shadow-white/10 hover:shadow-white/20 transition-all duration-300 hover:scale-105 overflow-hidden'>
-                    <div className="w-56 h-72 bg-black overflow-hidden">
+                <div className='group relative flex-1 min-w-56 max-w-64'>
+                  <div className='bg-transparent shadow-2xl shadow-white/10 hover:shadow-white/20 transition-all duration-300 hover:scale-105 overflow-hidden h-full flex flex-col'>
+                    <div className="w-full h-80 bg-black overflow-hidden">
                       <img src="/lamy.webp" alt="Late Lamyanba Heisnam" className="w-full h-full object-cover" />
                     </div>
-                    <div className='bg-white p-2 mt-2'>
-                      <div className="flex justify-between items-start">
+                    <div className='bg-white p-2 mt-2 flex-1'>
+                      <div className="flex justify-between items-start h-full">
                         <div className="flex-1">
                           <div className="font-bold text-lg text-black">Late Lamyanba Heisnam</div>
                           <div className="text-xs text-gray-600 mb-2">Co-Founder</div>
