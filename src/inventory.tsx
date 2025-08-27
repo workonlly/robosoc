@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ThreeModel from './usethreemodel'
+import SEO from './components/SEO'
+import { breadcrumbSchema } from './utils/structuredData'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -92,7 +94,18 @@ const Inventory: React.FC = () => {
   }, []);
 
   return (
-    <div className="inventory min-h-screen py-6 sm:py-10 lg:py-16 px-4 sm:px-6 lg:px-8 relative">
+    <>
+      <SEO 
+        title="Campaigns - RoboSoc NITH | Our Initiatives & Events"
+        description="Explore RoboSoc NITH's ongoing campaigns, initiatives, and events. Join our mission to promote robotics education and innovation at National Institute of Technology Hamirpur."
+        keywords="RoboSoc campaigns, NIT Hamirpur events, robotics initiatives, technology events, student activities, innovation programs, robotics awareness"
+        url="/Campaign's"
+        structuredData={breadcrumbSchema([
+          { name: "Home", url: "https://robosoc-nith.com/" },
+          { name: "Campaigns", url: "https://robosoc-nith.com/Campaign's" }
+        ])}
+      />
+      <div className="inventory min-h-screen py-6 sm:py-10 lg:py-16 px-4 sm:px-6 lg:px-8 relative">
       {/* Three.js Background */}
       <div className="fixed inset-0 z-0">
         <ThreeModel />
@@ -117,7 +130,8 @@ const Inventory: React.FC = () => {
         </div>
       </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }
 

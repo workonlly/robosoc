@@ -4,6 +4,8 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useLenis } from './hooks/useLenis'
 import ThreeModel from './usethreemodel'
+import SEO from './components/SEO'
+import { organizationSchema, websiteSchema } from './utils/structuredData'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -118,7 +120,15 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <>
+      <SEO 
+        title="RoboSoc NITH - Robotics Society of NIT Hamirpur"
+        description="Official website of RoboSoc NITH, the premier robotics society of National Institute of Technology Hamirpur. Pioneering the future of robotics and innovation with cutting-edge projects and talented members."
+        keywords="RoboSoc, NITH, NIT Hamirpur, Robotics Society, Technology, Innovation, Engineering, Automation, AI, Machine Learning, Projects, Students, Research, Dr. Kirti Mahajan, Kashish Verma"
+        url="/"
+        structuredData={[organizationSchema, websiteSchema]}
+      />
+      <div className="min-h-screen">
       <div ref={wrapperRef} className="relative">
         {/* Three.js Background */}
         <div className="fixed inset-0 z-0">
@@ -259,7 +269,8 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }
 

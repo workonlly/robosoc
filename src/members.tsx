@@ -5,6 +5,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { databases, DB_ID  } from '../appwrite';
 import type { Models } from 'appwrite';
 import ThreeModel from './usethreemodel';
+import SEO from './components/SEO';
+import { breadcrumbSchema } from './utils/structuredData';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -124,7 +126,18 @@ const Members: React.FC = () => {
   }, [allMembers]);
 
   return (
-    <div className="min-h-screen py-10 px-4 relative">
+    <>
+      <SEO 
+        title="Members - RoboSoc NITH | Our Talented Team"
+        description="Meet the brilliant minds behind RoboSoc NITH. Our diverse team of engineers, programmers, and innovators from National Institute of Technology Hamirpur driving robotics excellence."
+        keywords="RoboSoc members, NIT Hamirpur students, robotics team, engineering students, technology enthusiasts, student developers, innovation team"
+        url="/members"
+        structuredData={breadcrumbSchema([
+          { name: "Home", url: "https://robosoc-nith.com/" },
+          { name: "Members", url: "https://robosoc-nith.com/members" }
+        ])}
+      />
+      <div className="min-h-screen py-10 px-4 relative">
       {/* Three.js Background */}
       <div className="fixed inset-0 z-0">
         <ThreeModel />
@@ -241,7 +254,8 @@ const Members: React.FC = () => {
         </div>
       </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 
