@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { databases, DB_ID  } from '../appwrite';
 import type { Models } from 'appwrite';
-import ThreeModel from './usethreemodel';
+
 import SEO from './components/SEO';
 import { breadcrumbSchema } from './utils/structuredData';
 
@@ -138,11 +138,6 @@ const Members: React.FC = () => {
         ])}
       />
       <div className="min-h-screen py-10 px-4 relative">
-      {/* Three.js Background */}
-      <div className="fixed inset-0 z-0">
-        <ThreeModel />
-      </div>
-      
       <div className="relative z-10">
        <div ref={titleRef} className="max-w-6xl mx-auto mb-8 sm:mb-12 lg:mb-16">
         <div className='flex items-center w-full gap-2 sm:gap-4 mb-8 sm:mb-10 lg:mb-12'>

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import ThreeModel from './usethreemodel'
+
 import SEO from './components/SEO'
 import { breadcrumbSchema } from './utils/structuredData'
 
@@ -106,10 +106,7 @@ const Inventory: React.FC = () => {
         ])}
       />
       <div className="inventory min-h-screen py-6 sm:py-10 lg:py-16 px-4 sm:px-6 lg:px-8 relative">
-      {/* Three.js Background */}
-      <div className="fixed inset-0 z-0">
-        <ThreeModel />
-      </div>
+  
       
       <div className="relative z-10">
       <div ref={titleRef} className="max-w-6xl mx-auto mb-8 sm:mb-12 lg:mb-16">

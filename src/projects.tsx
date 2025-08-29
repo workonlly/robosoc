@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ThreeModel from './usethreemodel';
+
 import SEO from './components/SEO';
 import { breadcrumbSchema } from './utils/structuredData';
 
@@ -347,13 +347,10 @@ const Projects: React.FC = () => {
         ])}
       />
       <div className="projects min-h-screen relative">
-      {/* Three.js Background */}
-      <div className="fixed inset-0 z-0">
-        <ThreeModel />
-      </div>
+
 
       <div className="relative z-10">
-        {/* Header Section */}
+      
         <div ref={titleRef} className="max-w-6xl mx-auto mb-6 sm:mb-8 lg:mb-12 pt-4 px-3 sm:px-4 md:px-5">
           <div className='flex items-center w-full gap-2 sm:gap-4 mb-6 sm:mb-8 lg:mb-10'>
             <div className='bg-white h-6 sm:h-8 md:h-12 lg:h-16 flex-1 rounded-sm shadow-md md:shadow-lg'></div>
