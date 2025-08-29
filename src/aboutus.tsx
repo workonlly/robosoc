@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SEO from './components/SEO'
 import { breadcrumbSchema } from './utils/structuredData'
 
-// Register ScrollTrigger plugin
+
 gsap.registerPlugin(ScrollTrigger)
 
 const AboutUs: React.FC = () => {
@@ -24,13 +24,13 @@ const AboutUs: React.FC = () => {
 
     if (!container) return
 
-    // Set initial states
+
     gsap.set(title, { opacity: 0, y: 50 })
     gsap.set(content, { opacity: 0, scale: 0.9 })
     gsap.set(paragraphs, { opacity: 0, y: 30 })
     gsap.set(quote, { opacity: 0, x: -50 })
 
-    // Create timeline for title animation
+
     const titleTl = gsap.timeline({
       scrollTrigger: {
         trigger: title,
@@ -47,7 +47,7 @@ const AboutUs: React.FC = () => {
       ease: "power3.out"
     })
 
-    // Content container animation
+    
     const contentTl = gsap.timeline({
       scrollTrigger: {
         trigger: content,
@@ -64,7 +64,7 @@ const AboutUs: React.FC = () => {
       ease: "back.out(1.7)"
     })
 
-    // Stagger paragraphs animation
+   
     paragraphs.forEach((paragraph, index) => {
       gsap.to(paragraph, {
         opacity: 1,
@@ -81,7 +81,7 @@ const AboutUs: React.FC = () => {
       })
     })
 
-    // Quote animation
+ 
     if (quote) {
       gsap.to(quote, {
         opacity: 1,
@@ -97,7 +97,7 @@ const AboutUs: React.FC = () => {
       })
     }
 
-    // Cleanup function
+   
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill())
     }

@@ -5,10 +5,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SEO from './components/SEO';
 import { breadcrumbSchema } from './utils/structuredData';
 
-// Register ScrollTrigger plugin
+
 gsap.registerPlugin(ScrollTrigger);
 
-// Mouse-following glow wrapper component
+
 const GlowCardWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const glowRef = useRef<HTMLDivElement>(null);
   
@@ -72,11 +72,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ item }) => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
     
-    // Update CSS variables for light effect
+  
     card.style.setProperty('--mouse-x', `${x}px`);
     card.style.setProperty('--mouse-y', `${y}px`);
     
-    // Update state for border effect
+  
     setMousePosition({ x, y });
   };
 
@@ -110,7 +110,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ item }) => {
         transform: isHovered ? 'translateY(-1px) md:translateY(-2px)' : 'translateY(0)',
       } as React.CSSProperties}
     >
-      {/* Mouse-following light effect */}
+    
       <div
         className="pointer-events-none absolute inset-0 z-10 rounded-2xl md:rounded-3xl opacity-80"
         style={{
@@ -119,7 +119,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ item }) => {
           transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
         }}
       />
-      {/* Image on top */}
+     
       <div className="w-full h-64 flex-shrink-0 flex items-center justify-center overflow-hidden rounded-t-2xl">
         <img
           src={item.image}
@@ -142,7 +142,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ item }) => {
           }}
         />
       </div>
-      {/* Title and description below image */}
+     
       <div className="flex flex-col flex-1 justify-start p-4 sm:p-5 md:p-6 lg:p-8 bg-black/80 backdrop-blur-sm rounded-b-2xl">
         <h2 className="text-base sm:text-lg md:text-xl font-bold mb-2 text-white text-center flex-shrink-0">
           {item.title}
@@ -295,11 +295,11 @@ const Projects: React.FC = () => {
 
     if (!title || !cards) return;
 
-    // Set initial states
+
     gsap.set(title, { opacity: 0, y: 50 });
     gsap.set(cards.children, { opacity: 0, y: 100 });
 
-    // Title animation
+
     gsap.to(title, {
       opacity: 1,
       y: 0,
@@ -313,7 +313,6 @@ const Projects: React.FC = () => {
       }
     });
 
-    // Cards stagger animation
     gsap.to(cards.children, {
       opacity: 1,
       y: 0,
@@ -328,7 +327,6 @@ const Projects: React.FC = () => {
       }
     });
 
-    // Cleanup function
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
@@ -362,7 +360,7 @@ const Projects: React.FC = () => {
           </div>
         </div>
 
-        {/* Projects Grid as cards */}
+        
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 pb-12 md:pb-16">
           <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-stretch">
             {projects.map((item) => (

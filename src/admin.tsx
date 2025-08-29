@@ -21,7 +21,7 @@ interface MembersByYear {
   year1: Member[];
 }
 
-const SESSION_TIMEOUT = 10 * 60 * 1000; // 10 minutes
+const SESSION_TIMEOUT = 10 * 60 * 1000; 
 const DEMO_USER = { username: 'admin', password: 'robosoc2025' };
 
 const AdminPanel: React.FC = () => {
@@ -33,7 +33,7 @@ const AdminPanel: React.FC = () => {
   const [loginError, setLoginError] = useState('');
   const sessionTimeoutRef = useRef<number | null>(null);
   const lastActivityRef = useRef(Date.now());
-  // Session timeout logic
+
   useEffect(() => {
     if (!isLoggedIn) return;
     const handleActivity = () => {
@@ -41,7 +41,7 @@ const AdminPanel: React.FC = () => {
     };
     window.addEventListener('mousemove', handleActivity);
     window.addEventListener('keydown', handleActivity);
-    // Timer to check for timeout
+  
     const checkTimeout = () => {
       if (Date.now() - lastActivityRef.current > SESSION_TIMEOUT) {
         handleLogout();
@@ -95,37 +95,37 @@ const AdminPanel: React.FC = () => {
   const [memberToDelete, setMemberToDelete] = useState<Member | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Form state for adding/editing members
+
   const [formData, setFormData] = useState({
     name: '',
     post: '',
     profilepic: '',
     linkedin: '',
-    insta: '',  // Changed from instagram to insta
+    insta: '',  
     github: '',
     techstack: [] as string[],
-    year: 1 // Default to 1st year
+    year: 1 
   });
 
   useEffect(() => {
     fetchAllMembers();
   }, []);
 
-  // Collection IDs mapped to years
+
   const getCollectionId = (year: number): string => {
     switch (year) {
       case 4: return '689cefca0001449d5204';
       case 3: return '689cef0d003da89eebea';
       case 2: return '689cef3200167375be28';
       case 1: return '689cef460005804b0484';
-      default: return '689cef460005804b0484'; // Default to year 1
+      default: return '689cef460005804b0484'; 
     }
   };
 
   const fetchAllMembers = async () => {
     setLoading(true);
     try {
-      // Fetch all member collections
+    
       const [res4, res3, res2, res1] = await Promise.all([
         databases.listDocuments<Member>(DB_ID, '689cefca0001449d5204'), // Year 4
         databases.listDocuments<Member>(DB_ID, '689cef0d003da89eebea'), // Year 3
@@ -133,7 +133,7 @@ const AdminPanel: React.FC = () => {
         databases.listDocuments<Member>(DB_ID, '689cef460005804b0484')  // Year 1
       ]);
 
-      // Add year property to each member and organize by year
+      
       const year4Members = res4.documents.map(member => ({ ...member, year: 4 }));
       const year3Members = res3.documents.map(member => ({ ...member, year: 3 }));
       const year2Members = res2.documents.map(member => ({ ...member, year: 2 }));
@@ -161,7 +161,7 @@ const AdminPanel: React.FC = () => {
   };
 
   const handleTechStackChange = (techStack: string) => {
-    console.log('Tech stack input:', techStack); // Debug log
+    console.log('Tech stack input:', techStack);
     const techArray = techStack.split(',').map(tech => tech.trim()).filter(tech => tech);
     setFormData(prev => ({
       ...prev,
@@ -169,18 +169,18 @@ const AdminPanel: React.FC = () => {
     }));
   };
 
-  // Handle tech stack input with better comma support
+  
   const handleTechStackInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    console.log('Raw tech stack input:', value); // Debug log
+    console.log('Raw tech stack input:', value);
     handleTechStackChange(value);
   };
 
-  // Handle Enter key to add tech stack items
+  
   const handleTechStackKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       e.preventDefault();
-      // Add current input as a tech stack item
+     
       const currentInput = (e.target as HTMLInputElement).value;
       const lastCommaIndex = currentInput.lastIndexOf(',');
       const newTech = currentInput.substring(lastCommaIndex + 1).trim();
@@ -192,7 +192,7 @@ const AdminPanel: React.FC = () => {
     }
   };
 
-  // Alternative method: Add individual tech stack items
+ 
   const [tempTech, setTempTech] = useState('');
   
   const addTechStackItem = () => {
@@ -212,7 +212,7 @@ const AdminPanel: React.FC = () => {
     }
   };
 
-  // Prepare member data for Appwrite
+
   const prepareMemberData = (formData: any) => {
     const memberData: any = {
       name: formData.name,
@@ -220,20 +220,19 @@ const AdminPanel: React.FC = () => {
       profilepic: formData.profilepic,
     };
 
-    // Only add optional fields if they have values
+    
     if (formData.linkedin && formData.linkedin.trim()) {
       memberData.linkedin = formData.linkedin;
     }
-    if (formData.insta && formData.insta.trim()) {  // Changed from instagram to insta
+    if (formData.insta && formData.insta.trim()) {  
       memberData.insta = formData.insta;
     }
     if (formData.github && formData.github.trim()) {
       memberData.github = formData.github;
     }
-    
-    // Handle tech stack array properly for Appwrite
+
     if (formData.techstack && formData.techstack.length > 0) {
-      // Ensure all tech stack items are strings and not empty
+      
       const cleanTechStack = formData.techstack
         .filter((tech: string) => tech && tech.trim())
         .map((tech: string) => tech.trim());
@@ -246,7 +245,6 @@ const AdminPanel: React.FC = () => {
     return memberData;
   };
 
-  // Create new member
   const createMember = async () => {
     setIsSubmitting(true);
     try {
@@ -256,7 +254,7 @@ const AdminPanel: React.FC = () => {
       console.log('Creating member with data:', memberData);
       
       await databases.createDocument(DB_ID, collectionId, ID.unique(), memberData);
-      await fetchAllMembers(); // Refresh the list
+      await fetchAllMembers(); 
       closeModal();
       alert('Member added successfully!');
     } catch (error) {
@@ -267,7 +265,7 @@ const AdminPanel: React.FC = () => {
     }
   };
 
-  // Update existing member
+
   const updateMember = async () => {
     if (!selectedMember) {
       alert('No member selected for update');
@@ -288,18 +286,18 @@ const AdminPanel: React.FC = () => {
 
       console.log('Prepared member data for update:', memberData);
 
-      // If year changed, we need to delete from old collection and create in new one
+
       if (currentCollectionId !== newCollectionId) {
         console.log('Year changed - moving between collections');
         await databases.deleteDocument(DB_ID, currentCollectionId, selectedMember.$id);
         await databases.createDocument(DB_ID, newCollectionId, ID.unique(), memberData);
       } else {
-        // Same year, just update
+      
         console.log('Same year - updating in place');
         await databases.updateDocument(DB_ID, currentCollectionId, selectedMember.$id, memberData);
       }
       
-      await fetchAllMembers(); // Refresh the list
+      await fetchAllMembers(); 
       closeModal();
       alert('Member updated successfully!');
     } catch (error) {
@@ -311,12 +309,12 @@ const AdminPanel: React.FC = () => {
     }
   };
 
-  // Delete member
+
   const deleteMember = async (member: Member) => {
     try {
       const collectionId = getCollectionId(member.year || 1);
       await databases.deleteDocument(DB_ID, collectionId, member.$id);
-      await fetchAllMembers(); // Refresh the list
+      await fetchAllMembers(); 
       setShowDeleteConfirm(false);
       setMemberToDelete(null);
       alert('Member deleted successfully!');
@@ -346,7 +344,7 @@ const AdminPanel: React.FC = () => {
   };
 
   const openModal = (member?: Member, year?: number) => {
-    console.log('Opening modal with:', { member, year }); // Debug log
+    console.log('Opening modal with:', { member, year }); 
     
     if (member) {
       console.log('Member data received:', {
@@ -354,7 +352,7 @@ const AdminPanel: React.FC = () => {
         post: member.post,
         profilepic: member.profilepic,
         linkedin: member.linkedin,
-        insta: member.insta,  // Changed from instagram to insta
+        insta: member.insta,  
         github: member.github,
         techstack: member.techstack,
         year: member.year
@@ -366,7 +364,7 @@ const AdminPanel: React.FC = () => {
         post: member.post || '',
         profilepic: member.profilepic || '',
         linkedin: member.linkedin || '',
-        insta: member.insta || '',  // Changed from instagram to insta
+        insta: member.insta || '',  
         github: member.github || '',
         techstack: member.techstack || [],
         year: member.year || 1
@@ -375,7 +373,7 @@ const AdminPanel: React.FC = () => {
       console.log('Setting form data to:', formDataToSet);
       setFormData(formDataToSet);
       
-      // Also reset tempTech when opening modal
+   
       setTempTech('');
       
     } else {
@@ -385,13 +383,13 @@ const AdminPanel: React.FC = () => {
         post: '',
         profilepic: '',
         linkedin: '',
-        insta: '',  // Changed from instagram to insta
+        insta: '', 
         github: '',
         techstack: [],
-        year: year || 1 // Use the passed year or default to 1
+        year: year || 1 
       });
-      setTempTech(''); // Reset temp tech for new member
-      console.log('Add mode - Form data set with year:', year || 1); // Debug log
+      setTempTech(''); 
+      console.log('Add mode - Form data set with year:', year || 1); 
     }
     setIsModalOpen(true);
   };
@@ -423,7 +421,7 @@ const AdminPanel: React.FC = () => {
 
   const renderMemberCard = (member: Member) => (
     <div key={member.$id} className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 border border-slate-700 relative">
-      {/* Year Badge */}
+
       <div className={`absolute top-3 right-3 bg-gradient-to-r ${getYearColor(member.year || 0)} text-white px-2 py-1 rounded-full text-xs font-semibold`}>
         Year {member.year}
       </div>
@@ -565,7 +563,7 @@ const AdminPanel: React.FC = () => {
           Logout
         </button>
       </div>
-      {/* Members Section */}
+    
       <div className="space-y-8">
         <div className="flex justify-between items-center">
           <div>
@@ -580,7 +578,7 @@ const AdminPanel: React.FC = () => {
           </button>
         </div>
 
-        {/* Year-wise Members Sections */}
+        
         {[4, 3, 2, 1].map((year) => {
           const yearKey = `year${year}` as keyof MembersByYear;
           const yearMembers = membersByYear[yearKey];
@@ -610,7 +608,7 @@ const AdminPanel: React.FC = () => {
           );
         })}
 
-        {/* Empty State */}
+       
         {getTotalMembers() === 0 && (
           <div className="text-center py-12">
             <div className="text-slate-400 text-lg mb-4">No members found</div>
@@ -623,7 +621,7 @@ const AdminPanel: React.FC = () => {
           </div>
         )}
       </div>
-    </div>      {/* Modal for Add/Edit Member */}
+    </div>     
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-slate-800 rounded-xl p-6 w-full max-w-md max-h-[90vh] overflow-y-auto">
@@ -631,7 +629,7 @@ const AdminPanel: React.FC = () => {
               {selectedMember ? 'Edit Member' : 'Add New Member'}
             </h3>
             
-            {/* Debug Info - Remove this after fixing */}
+            
             {selectedMember && (
               <div className="bg-slate-900 p-3 rounded mb-4 text-xs">
                 <p className="text-slate-400 mb-2">Debug Info (will be removed):</p>
@@ -749,7 +747,7 @@ const AdminPanel: React.FC = () => {
                   Tech Stack
                 </label>
                 
-                {/* Method 1: Comma-separated input */}
+             
                 <div className="space-y-3">
                   <div>
                     <label className="text-slate-400 text-xs">Method 1: Comma-separated (React, Node.js, etc.)</label>
@@ -764,7 +762,6 @@ const AdminPanel: React.FC = () => {
                     />
                   </div>
 
-                  {/* Method 2: Individual addition */}
                   <div>
                     <label className="text-slate-400 text-xs">Method 2: Add one at a time</label>
                     <div className="flex gap-2 mt-1">
@@ -842,7 +839,7 @@ const AdminPanel: React.FC = () => {
         </div>
       )}
 
-      {/* Delete Confirmation Modal */}
+ 
       {showDeleteConfirm && memberToDelete && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-slate-800 rounded-xl p-6 w-full max-w-md">

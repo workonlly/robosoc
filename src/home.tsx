@@ -7,7 +7,7 @@ import ThreeModel from './usethreemodel'
 import SEO from './components/SEO'
 import { organizationSchema, websiteSchema } from './utils/structuredData'
 
-// Register ScrollTrigger plugin
+
 gsap.registerPlugin(ScrollTrigger)
 
 const Home: React.FC = () => {
@@ -28,16 +28,16 @@ const Home: React.FC = () => {
 
     if (!hero || !wrapper) return;
 
-    // Set initial states - only for hero and purpose title
+   
     gsap.set(hero.children, { opacity: 0, y: 50 });
     if (purposeSection) {
-      // Set initial state for the entire black div and the title
+    
       gsap.set(purposeSection, { opacity: 0, y: 100 });
       gsap.set(purposeSection.querySelector('h2'), { opacity: 0, y: 40, scale: 0.9 });
     }
     if (stats) gsap.set(stats.children, { opacity: 0, y: 30 });
 
-    // Hero animation
+  
     gsap.to(hero.children, {
       opacity: 1,
       y: 0,
@@ -47,17 +47,16 @@ const Home: React.FC = () => {
       delay: 0.5
     });
 
-    // ScrollTrigger to control fixed positioning
     if (purposeSection) {
       ScrollTrigger.create({
         trigger: wrapper,
         start: "top top",
         end: "bottom bottom",
         onUpdate: (self) => {
-          // When we reach the end of the purpose section, remove fixed positioning
-          if (self.progress > 0.7) { // Adjust this value to control when it stops being fixed
+
+          if (self.progress > 0.7) {
             hero.style.position = 'absolute';
-            hero.style.top = '70%'; // Position it where it should be when no longer fixed
+            hero.style.top = '70%'; 
           } else {
             hero.style.position = 'fixed';
             hero.style.top = '0';
@@ -65,7 +64,7 @@ const Home: React.FC = () => {
         }
       });
 
-      // Animate the black div coming upward (no pinning needed)
+    
       gsap.to(purposeSection, {
         opacity: 1,
         y: 0,
@@ -79,7 +78,7 @@ const Home: React.FC = () => {
         }
       });
 
-      // Then animate the "Our Purpose" title
+
       gsap.to(purposeSection.querySelector('h2'), {
         opacity: 1,
         y: 0,
@@ -96,7 +95,6 @@ const Home: React.FC = () => {
       });
     }
 
-    // Stats counter animation
     if (stats) {
       gsap.to(stats.children, {
         opacity: 1,
@@ -113,7 +111,6 @@ const Home: React.FC = () => {
       });
     }
 
-    // Cleanup function
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
@@ -130,7 +127,7 @@ const Home: React.FC = () => {
       />
       <div className="min-h-screen">
       <div ref={wrapperRef} className="relative">
-        {/* Three.js Background */}
+   
         <div className="fixed inset-0 z-0">
           <ThreeModel />
         </div>
@@ -155,7 +152,7 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        {/* Spacer to account for fixed hero */}
+      
         <div className="h-screen mt-2"></div>
 
         <div ref={purposeSectionRef} className='relative z-20 py-16 px-4 bg-gradient-to-br from-black/90 to-black/70 m-4 rounded-2xl shadow-2xl shadow-white/20 backdrop-blur-md border border-white/10'>

@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SEO from './components/SEO'
 import { breadcrumbSchema } from './utils/structuredData'
 
-// Register ScrollTrigger plugin
+
 gsap.registerPlugin(ScrollTrigger)
 
 const Achievements: React.FC = () => {
@@ -14,6 +14,34 @@ const Achievements: React.FC = () => {
   const achievementsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   const achievements = [
+    {
+      year: "2025",
+      title: "NIMBUS 2025",
+      description: "1st  position OPEN EXHIBITION for SLAM Technology and 2nd in Hovercraft Competition"
+    },
+    {
+      year: "2025",
+      title: "TECHKRITI ",
+      description: "2nd and 3rd position in IIT KANPUR TECHKRITI for Galactic Dodger and IARC"
+    },
+    { 
+      year: "2024",
+      title: "NIMBUS 2024",
+      description: "1st and 2nd position in NIMBUS 2024 OPEN EXHIBITION for projects in DEEP FAKE & SLAM Technology"
+
+    },
+    {
+      year: "2024",
+      title: "TECHKRITI 2024",
+      description: "st and 2nd position in IIT Kanpur TECHKRITI for Secure Comm & Galactic Dodger"
+
+    },
+    {
+      year: "2024",
+      title: "E YANTRA",
+      description: "Secured Top 25 Position conducted by MoE hosted by IITB"
+
+    },
     {
       year: "2023",
       title: "Techkriti IIT Kanpur",
@@ -54,11 +82,11 @@ const Achievements: React.FC = () => {
 
     if (!title || !timeline) return;
 
-    // Set initial states with scroll-triggered setup
+    
     gsap.set(title, { opacity: 0, y: 50, scale: 0.9 });
     gsap.set(timeline, { opacity: 0, scaleY: 0, transformOrigin: "top" });
     
-    // Only set initial state for first achievement
+
     if (firstAchievement) {
       gsap.set(firstAchievement, { 
         opacity: 0, 
@@ -68,7 +96,6 @@ const Achievements: React.FC = () => {
       });
     }
 
-    // Title animation with scroll trigger
     gsap.to(title, {
       opacity: 1,
       y: 0,
@@ -83,7 +110,7 @@ const Achievements: React.FC = () => {
       }
     });
 
-    // Timeline animation with scroll trigger
+    
     gsap.to(timeline, {
       opacity: 1,
       scaleY: 1,
@@ -98,9 +125,9 @@ const Achievements: React.FC = () => {
       }
     });
 
-    // Only animate the first achievement card with enhanced animations
+
     if (firstAchievement) {
-      // Main card fade-in animation
+
       gsap.to(firstAchievement, {
         opacity: 1,
         x: 0,
@@ -116,7 +143,7 @@ const Achievements: React.FC = () => {
         }
       });
 
-      // Additional fade-in for inner content
+      
       const innerContent = firstAchievement.querySelector('.achievement-content');
       if (innerContent) {
         gsap.fromTo(innerContent, 
@@ -137,7 +164,7 @@ const Achievements: React.FC = () => {
         );
       }
 
-      // Year badge fade-in animation
+    
       const yearBadge = firstAchievement.querySelector('.year-badge');
       if (yearBadge) {
         gsap.fromTo(yearBadge,
@@ -158,7 +185,7 @@ const Achievements: React.FC = () => {
         );
       }
 
-      // Timeline dot animation
+  
       const timelineDot = firstAchievement.querySelector('.timeline-dot');
       if (timelineDot) {
         gsap.fromTo(timelineDot,
@@ -180,7 +207,6 @@ const Achievements: React.FC = () => {
       }
     }
 
-    // Cleanup function
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };

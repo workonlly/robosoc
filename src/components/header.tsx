@@ -45,7 +45,7 @@ const Header: React.FC = () => {
             </Link>
           </li>
           
-          <li>
+          {/* <li>
             <Link 
               to="/Campaign's" 
               onClick={scrollToTop}
@@ -53,7 +53,7 @@ const Header: React.FC = () => {
             >
               Campaign's
             </Link>
-          </li>
+          </li> */}
            <li>
             <Link 
               to="/members" 
@@ -129,7 +129,7 @@ const Header: React.FC = () => {
               </svg>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link 
               to="/Campaign's" 
               onClick={scrollToTop}
@@ -139,7 +139,7 @@ const Header: React.FC = () => {
                 <path fillRule="evenodd" d="M10 2L3 7v11a1 1 0 001 1h12a1 1 0 001-1V7l-7-5zM8.5 13a1.5 1.5 0 103 0 1.5 1.5 0 00-3 0z" clipRule="evenodd"/>
               </svg>
             </Link>
-          </li>
+          </li> */}
            <li>
             <Link 
               to="/members" 

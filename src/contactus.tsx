@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SEO from './components/SEO'
 import { breadcrumbSchema } from './utils/structuredData'
 
-// Register ScrollTrigger plugin
+
 gsap.registerPlugin(ScrollTrigger)
 
 const ContactUs: React.FC = () => {
@@ -35,10 +35,10 @@ const ContactUs: React.FC = () => {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
+    
     await new Promise(resolve => setTimeout(resolve, 2000))
     
-    // Reset form
+   
     setFormData({
       name: '',
       email: '',
@@ -57,13 +57,12 @@ const ContactUs: React.FC = () => {
 
     if (!title) return;
 
-    // Set initial states
+
     gsap.set(title, { opacity: 0, y: 50 });
     if (contactInfo) gsap.set(contactInfo, { opacity: 0, x: -50 });
     if (form) gsap.set(form, { opacity: 0, x: 50 });
     if (social) gsap.set(social, { opacity: 0, y: 30 });
 
-    // Title animation
     gsap.to(title, {
       opacity: 1,
       y: 0,
@@ -77,7 +76,7 @@ const ContactUs: React.FC = () => {
       }
     });
 
-    // Contact info animation
+ 
     if (contactInfo) {
       gsap.to(contactInfo, {
         opacity: 1,
@@ -93,7 +92,7 @@ const ContactUs: React.FC = () => {
       });
     }
 
-    // Form animation
+ 
     if (form) {
       gsap.to(form, {
         opacity: 1,
@@ -109,7 +108,7 @@ const ContactUs: React.FC = () => {
       });
     }
 
-    // Social section animation
+   
     if (social) {
       gsap.to(social, {
         opacity: 1,
@@ -125,7 +124,7 @@ const ContactUs: React.FC = () => {
       });
     }
 
-    // Cleanup function
+    
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
@@ -162,7 +161,7 @@ const ContactUs: React.FC = () => {
 
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 lg:items-stretch">
-          {/* Contact Information */}
+        
           <div ref={contactInfoRef} className="flex-1 flex flex-col">
             <div className="bg-black/80 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/20 shadow-2xl shadow-white/10 flex-1 flex flex-col">
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6">Get In Touch</h2>
@@ -172,7 +171,7 @@ const ContactUs: React.FC = () => {
               </p>
 
               <div className="space-y-3 sm:space-y-4 lg:space-y-6">
-                {/* Email */}
+         
                 <div className="flex items-center space-x-3 sm:space-x-4">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-white/10 rounded-xl flex items-center justify-center border border-white/20 flex-shrink-0">
                     <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -188,7 +187,7 @@ const ContactUs: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Location */}
+        
                 <div className="flex items-center space-x-3 sm:space-x-4">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-white/10 rounded-xl flex items-center justify-center border border-white/20 flex-shrink-0">
                     <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -201,7 +200,6 @@ const ContactUs: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Phone */}
                 <div className="flex items-center space-x-3 sm:space-x-4">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-white/10 rounded-xl flex items-center justify-center border border-white/20 flex-shrink-0">
                     <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -215,7 +213,6 @@ const ContactUs: React.FC = () => {
                 </div>
               </div>
 
-              {/* Social Media */}
               <div className='w-full px-2 bg-white rounded-full h-[1px] sm:h-[2px] my-3 sm:my-4'></div>
               <div ref={socialRef} className="flex gap-2 sm:gap-3 lg:gap-4 pt-2 justify-center lg:justify-start">
                 <a 
@@ -257,13 +254,13 @@ const ContactUs: React.FC = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
+
           <div ref={formRef} className="flex-1 flex flex-col">
             <div className="bg-black/80 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/20 shadow-2xl shadow-white/10 flex-1 flex flex-col">
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6">Send us a Message</h2>
               
               <form onSubmit={handleSubmit} className="flex-1 flex flex-col gap-3 sm:gap-4 lg:gap-6">
-                {/* Name */}
+         
                 <div>
                   <label htmlFor="name" className="block text-white font-medium mb-1 sm:mb-2 text-xs sm:text-sm lg:text-base">
                     Full Name *
@@ -280,7 +277,7 @@ const ContactUs: React.FC = () => {
                   />
                 </div>
 
-                {/* Email */}
+          
                 <div>
                   <label htmlFor="email" className="block text-white font-medium mb-1 sm:mb-2 text-xs sm:text-sm lg:text-base">
                     Email Address *

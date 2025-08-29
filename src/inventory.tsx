@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SEO from './components/SEO'
 import { breadcrumbSchema } from './utils/structuredData'
 
-// Register ScrollTrigger plugin
+
 gsap.registerPlugin(ScrollTrigger)
 
 const Inventory: React.FC = () => {
@@ -22,13 +22,13 @@ const Inventory: React.FC = () => {
 
     if (!title || !content || !spinner || !text) return;
 
-    // Set initial states (keeping animate-spin working by only animating opacity and scale)
+   
     gsap.set(title, { opacity: 0, y: 50, scale: 0.9 });
     gsap.set(content, { opacity: 0, y: 30 });
-    gsap.set(spinner, { opacity: 0, scale: 0 }); // Don't interfere with animate-spin rotation
+    gsap.set(spinner, { opacity: 0, scale: 0 }); 
     gsap.set(text, { opacity: 0, y: 20 });
 
-    // Title animation
+
     gsap.to(title, {
       opacity: 1,
       y: 0,
@@ -43,7 +43,7 @@ const Inventory: React.FC = () => {
       }
     });
 
-    // Content container fade-in
+
     gsap.to(content, {
       opacity: 1,
       y: 0,
@@ -57,7 +57,7 @@ const Inventory: React.FC = () => {
       }
     });
 
-    // Spinner animation (only opacity and scale to preserve animate-spin)
+
     gsap.to(spinner, {
       opacity: 1,
       scale: 1,
@@ -72,7 +72,7 @@ const Inventory: React.FC = () => {
       }
     });
 
-    // Text fade-in with bounce
+
     gsap.to(text, {
       opacity: 1,
       y: 0,
@@ -87,7 +87,7 @@ const Inventory: React.FC = () => {
       }
     });
 
-    // Cleanup function
+
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
